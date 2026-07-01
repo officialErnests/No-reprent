@@ -4,6 +4,7 @@ extends Node3D
 @export_tool_button("Refresh", "Callable") var refresh_action  = _ready
 @export_tool_button("Revert trash", "Callable") var revert_trash  = revertTrash
 @export_tool_button("Clear trash", "Callable") var clear_trash  = clearTrash
+@export var preset_slides: PackedScene = null # = "scene" TODO
 @export var slides: Array[nb_slide] = []:
 	set(p_new_array):
 		new_array = p_new_array
@@ -65,6 +66,10 @@ func vailidateChildren():
 				temp_move.reparent(trash)
 				temp_move.name = temp_name
 				offset += 1
+
+func createEmptySlide():
+	pass
+	#TODO
 
 func revertTrash():
 	recheckChild("nb_trash", "trash")

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b10qge4167arl"]
+
+[ext_resource type="Script" uid="uid://bxf4w20ghprpf" path="res://no_reprent/Script/main_scene.gd" id="1_52fb6"]
+[ext_resource type="Script" uid="uid://dq4xbtusd7orp" path="res://no_reprent/Script/slide.gd" id="2_6l7je"]
+[ext_resource type="PackedScene" uid="uid://dxe2856gbgt65" path="res://no_reprent/Scenes/preset_slide.tscn" id="2_m6xlq"]
+[ext_resource type="Texture2D" uid="uid://bv1akti0i5inn" path="res://no_reprent/Assets/Untitled presentation.png" id="4_dhn36"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xjrd"]
+albedo_texture = ExtResource("4_dhn36")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dhklb"]
+size = Vector2(1.777, 1)
+
+[node name="Main_scene" type="Node3D" unique_id=1282011518 node_paths=PackedStringArray("slides")]
+script = ExtResource("1_52fb6")
+slide_preset = ExtResource("2_m6xlq")
+slides = [NodePath("nb_slides/slide_1"), NodePath("nb_slides/slide_2"), NodePath("nb_slides/slide_3")]
+
+[node name="nb_trash" type="Node3D" parent="." unique_id=583480922]
+visible = false
+
+[node name="nb_slides" type="Node3D" parent="." unique_id=1335640339]
+
+[node name="slide_1" parent="nb_slides" unique_id=1142204227 instance=ExtResource("2_m6xlq")]
+script = ExtResource("2_6l7je")
+
+[node name="Camera3D" parent="nb_slides/slide_1" index="0" unique_id=724262419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+
+[node name="MeshInstance3D" parent="nb_slides/slide_1" index="1" unique_id=517713459]
+material_override = SubResource("StandardMaterial3D_1xjrd")
+mesh = SubResource("QuadMesh_dhklb")
+
+[node name="slide_2" parent="nb_slides" unique_id=1192512356 instance=ExtResource("2_m6xlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_6l7je")
+slide_aligner_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" parent="nb_slides/slide_2" index="0" unique_id=724262419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+
+[node name="MeshInstance3D" parent="nb_slides/slide_2" index="1" unique_id=517713459]
+material_override = SubResource("StandardMaterial3D_1xjrd")
+mesh = SubResource("QuadMesh_dhklb")
+
+[node name="slide_3" parent="nb_slides" unique_id=697784382 instance=ExtResource("2_m6xlq")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 1.777, 0.5, 0)
+script = ExtResource("2_6l7je")
+slide_aligner_offset = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 1.777, -0.5, 0)
+
+[node name="Camera3D" parent="nb_slides/slide_3" index="0" unique_id=724262419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+
+[node name="MeshInstance3D" parent="nb_slides/slide_3" index="1" unique_id=517713459]
+material_override = SubResource("StandardMaterial3D_1xjrd")
+mesh = SubResource("QuadMesh_dhklb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=249831361]
+transform = Transform3D(0.8660254, -0.43301272, 0.24999999, 0, 0.49999997, 0.86602545, -0.5, -0.75, 0.43301266, 0, 0, 0)
+
+[node name="nb_aligner" type="Node3D" parent="." unique_id=202618719]
+
+[editable path="nb_slides/slide_1"]
+[editable path="nb_slides/slide_2"]
+[editable path="nb_slides/slide_3"]
