@@ -19,8 +19,11 @@ var slides_node: Node3D = null
 var aligners:Node3D = null
 var trash:Node3D = null
 func _ready() -> void:
-	scan()
-	initilized = true
+	if Engine.is_editor_hint():
+		scan()
+		initilized = true
+	else:
+		presentationStarted()
 
 func scan():
 	validate()
@@ -29,6 +32,12 @@ func scan():
 		for child in slides_node.get_children():
 			child.slide_manager = self
 			slides.append(child)
+		
+		if aligners.get_child_count() != 0:
+			var path = aligners.get_child(0).get_meta("slide")
+			if has_node(path):
+				get_node(path).disableAlign()
+			for i in aligners.get_children(): i.queue_free()
 		notify_property_list_changed()
 	# update()
 
@@ -149,3 +158,28 @@ func slide_deleteSlide(p_node):
 func slide_restoreSlide(p_node): 
 	restoreSlide(p_node)
 	notify_property_list_changed()
+
+##################
+### Presenting ###
+##################
+
+var curent_slide = 0
+var slide_amount = 0
+func presentationStarted():
+	slides.clear()
+	for child in slides_node.get_children():
+		child.slide_manager = self
+		slides.append(child)
+	slide_amount = slides.size()
+	slides[0].camera.current = true
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Presentation_backwards"): changeSlide(curent_slide - 1)
+	if event.is_action_pressed("Presentation_fowards"): changeSlide(curent_slide + 1)
+	if event.is_action_pressed("Presentation_reset"): changeSlide(0)
+	if event.is_action_pressed("Presentation_variation_fowards"): pass
+	if event.is_action_pressed("Presentation_variation_backwards"): pass
+
+func changeSlide(index:int):
+	curent_slide = clamp(index, 0, slide_amount - 1)
+	slides[curent_slide].camera.current = true

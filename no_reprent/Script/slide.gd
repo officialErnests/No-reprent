@@ -13,7 +13,7 @@ func delete():
         slide_manager.slide_deleteSlide(self)
         slide_aligner_obj.queue_free()
 func restore(): if slide_deleted: slide_manager.slide_restoreSlide(self)
-
+@export var camera: Camera3D
 
 @export_category("Aligner")
 # Used to calculate next slide position
@@ -28,6 +28,7 @@ var slide_aligner_obj = null
 @export var show_aligner: bool = false:
     set(show_aligner_new):
         if not initalized: return
+        checkManager()
         show_aligner = show_aligner_new
         if slide_deleted: return
         if show_aligner:
@@ -63,3 +64,10 @@ func disableAlign():
 
 func _ready() -> void:
     initalized = true
+    checkManager()
+
+func checkManager():
+    if not slide_manager:
+        var temp_one = get_parent().get_parent()
+        if temp_one is nb_slide_manager:
+            temp_one.scan()

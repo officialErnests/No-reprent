@@ -6,7 +6,7 @@
 [node name="Main_scene" type="Node3D" unique_id=1282011518 node_paths=PackedStringArray("slides")]
 script = ExtResource("1_10agn")
 slide_preset = ExtResource("2_m6xlq")
-slides = [NodePath("nb_slides/slide_1"), NodePath("nb_slides/slide_2"), NodePath("nb_slides/slide_3"), NodePath("nb_slides/slide_4")]
+slides = [NodePath("nb_slides/slide_1"), NodePath("nb_slides/slide_2"), NodePath("nb_slides/slide_3"), NodePath("nb_slides/slide_4"), NodePath("nb_slides/slide_5"), NodePath("nb_slides/slide_6"), NodePath("nb_slides/slide_7")]
 
 [node name="nb_trash" type="Node3D" parent="." unique_id=583480922]
 visible = false
@@ -15,15 +15,32 @@ visible = false
 
 [node name="slide_1" parent="nb_slides" unique_id=1142204227 instance=ExtResource("2_m6xlq")]
 
+[node name="MeshInstance3D" parent="nb_slides/slide_1" index="1" unique_id=517713459]
+transform = Transform3D(0.9176451, 0, -0.3974009, 0, 1, 0, 0.3974009, 0, 0.9176451, 0, 0, 0)
+
 [node name="slide_2" parent="nb_slides" unique_id=1542946711 instance=ExtResource("2_m6xlq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.777, 1, 0)
 slide_aligner_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.777, 1, 0)
 
 [node name="slide_3" parent="nb_slides" unique_id=1427346639 instance=ExtResource("2_m6xlq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.554, 1, 0)
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 3.254, 1, 0.6290739)
+slide_aligner_offset = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 1.477, 0, 0.6290739)
 
 [node name="slide_4" parent="nb_slides" unique_id=2026344529 instance=ExtResource("2_m6xlq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.331, 1, 0)
+transform = Transform3D(0, 0.42261824, -0.9063077, 0, 0.90630776, 0.42261824, 0.99999994, 0, 0, 3.8798656, 1, 2.1421475)
+slide_aligner_offset = Transform3D(0.70710677, 0.29883623, -0.6408563, 0, 0.90630776, 0.42261824, 0.70710677, -0.29883623, 0.6408563, 1.5124583, 0, 0.6273508)
+
+[node name="slide_5" parent="nb_slides" unique_id=1033513666 instance=ExtResource("2_m6xlq")]
+transform = Transform3D(-0.045699913, 0.9987035, -0.022423118, -0.53814787, -0.0057017803, 0.84283113, 0.8416108, 0.050584182, 0.5377106, 3.8798656, 1, 3.9191477)
+slide_aligner_offset = Transform3D(0.8416109, 0.05058419, 0.53771067, -0.5070412, 0.41690275, 0.75438803, -0.18601292, -0.9075425, 0.37651807, 1.7770004, 0, 0)
+
+[node name="slide_6" parent="nb_slides" unique_id=889420774 instance=ExtResource("2_m6xlq")]
+transform = Transform3D(0.23614496, 0.35331762, 0.9052084, -0.91885406, -0.22188069, 0.32630816, 0.31613898, -0.9088101, 0.27225107, 3.8798656, 1, 5.6961484)
+slide_aligner_offset = Transform3D(0.31613892, -0.9088099, 0.272251, -0.73296547, -0.051773712, 0.6782932, -0.6023445, -0.41398537, -0.6824937, 1.7770002, 0, 0)
+
+[node name="slide_7" parent="nb_slides" unique_id=2108444805 instance=ExtResource("2_m6xlq")]
+transform = Transform3D(-0.7396395, 0.5002126, 0.45024616, -0.6699832, -0.61059165, -0.4222572, 0.06369823, -0.61397505, 0.786751, 3.8798656, 0.99999976, 7.4731493)
+slide_aligner_offset = Transform3D(1.0000002, -2.9802322e-08, 0, 2.9802322e-08, 1, -2.9802322e-08, 0, 2.9802322e-08, 1, 1.7770002, -2.3841858e-07, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=249831361]
 transform = Transform3D(0.8660254, -0.43301272, 0.24999999, 0, 0.49999997, 0.86602545, -0.5, -0.75, 0.43301266, 0, 0, 0)
@@ -34,3 +51,6 @@ transform = Transform3D(0.8660254, -0.43301272, 0.24999999, 0, 0.49999997, 0.866
 [editable path="nb_slides/slide_2"]
 [editable path="nb_slides/slide_3"]
 [editable path="nb_slides/slide_4"]
+[editable path="nb_slides/slide_5"]
+[editable path="nb_slides/slide_6"]
+[editable path="nb_slides/slide_7"]
