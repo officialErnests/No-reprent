@@ -1,45 +1,50 @@
 @tool 
-extends Node3D
+class_name nb_slide_manager extends Node3D
 @export_category("Trash")
-@export_tool_button("Revert trash", "Callable") var revert_trash  = revertTrash
-@export_tool_button("Clear trash", "Callable") var clear_trash  = clearTrash
+@export_tool_button("Revert trash", "FileAccess") var revert_trash  = revertTrash
+@export_tool_button("Clear trash", "FileDead") var clear_trash  = clearTrash
 @export_category("Slides")
-@export_tool_button("Align slides", "Callable") var align_slides  = refreshSlidePositions
-@export_tool_button("Rescan all", "Callable") var refresh_action  = _ready
+@export_tool_button("Align slides", "CombineLines") var align_slides  = refreshSlidePositions
+@export_tool_button("Rescan all", "Reload") var refresh_action  = _ready
 @export var slide_preset: PackedScene = ResourceLoader.load("res://no_reprent/Scenes/preset_slide.tscn")
 @export var slides: Array[nb_slide] = []:
 	set(p_new_array):
+		if not initilized: return
 		new_array = p_new_array
 		update()
 
+var initilized: bool = false
 var new_array: Array[nb_slide] = []
 var slides_node: Node3D = null
 var aligners:Node3D = null
 var trash:Node3D = null
 func _ready() -> void:
-	recheckChild("nb_slides", "slides_node")
-	recheckChild("nb_trash", "trash")
-	recheckChild("nb_aligner", "aligners")
 	scan()
+	initilized = true
 
 func scan():
+	validate()
 	if Engine.is_editor_hint():
-		recheckChild("nb_slides", "slides_node")
-		recheckChild("nb_trash", "trash")
 		slides.clear()
 		for child in slides_node.get_children():
+			child.slide_manager = self
 			slides.append(child)
 		notify_property_list_changed()
+	# update()
 
 func update():
+	validate()
 	if Engine.is_editor_hint():
+		if aligners.get_child_count() != 0:
+			var path = aligners.get_child(0).get_meta("slide")
+			if has_node(path):
+				get_node(path).disableAlign()
+			for i in aligners.get_children(): i.queue_free()
 		if !is_inside_tree():
 			return
 		vailidateChildren()
 
 func vailidateChildren():
-	recheckChild("nb_slides", "slides_node")
-	recheckChild("nb_trash", "trash")
 	var new_slide_amount = new_array.size() - slides_node.get_child_count()
 	if new_slide_amount > 0:
 		for i in range(new_slide_amount):
@@ -79,6 +84,7 @@ func vailidateChildren():
 	notify_property_list_changed()
 
 func revertTrash():
+	validate()
 	for child in trash.get_children(): restoreSlide(child)
 	notify_property_list_changed()
 
@@ -92,12 +98,14 @@ func restoreSlide(p_slide):
 
 #after all of these functions call notify_property_list_changed()
 func trashSlide(p_slide):
+	validate()
 	var temp_name = p_slide.name
 	p_slide.reparent(trash)
 	p_slide.name = temp_name
 	p_slide.slide_deleted = true
 
 func refreshSlidePositions():
+	validate()
 	var is_first = true
 	var previous_transform = global_transform
 	for i in slides_node.get_children():
@@ -109,7 +117,7 @@ func refreshSlidePositions():
 		previous_transform = i.global_transform
 
 func clearTrash():
-	recheckChild("nb_trash", "trash")
+	validate()
 	for child in trash.get_children(): child.queue_free()
 
 func recheckChild(p_name, p_variable):
@@ -122,6 +130,11 @@ func recheckChild(p_name, p_variable):
 			"nb_trash":
 				get(p_variable).visible = false
 	get(p_variable).owner = get_tree().edited_scene_root
+
+func validate():
+	recheckChild("nb_slides", "slides_node")
+	recheckChild("nb_trash", "trash")
+	recheckChild("nb_aligner", "aligners")
 
 #######################
 ### Scene functions ###
