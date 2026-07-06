@@ -6,8 +6,8 @@ var slide_deleted = false
 var initalized = false
 
 @export_category("Slide")
-@export_tool_button("Delete", "Callable") var delete_action = delete
-@export_tool_button("Restore", "Callable") var restore_action = restore
+@export_tool_button("Delete", "FileDead") var delete_action = delete
+@export_tool_button("Restore", "File") var restore_action = restore
 func delete(): 
     if not slide_deleted: 
         slide_manager.slide_deleteSlide(self)
@@ -68,6 +68,24 @@ func _ready() -> void:
 
 func checkManager():
     if not slide_manager:
+        if not get_parent():
+            return
         var temp_one = get_parent().get_parent()
         if temp_one is nb_slide_manager:
             temp_one.scan()
+
+@export_category("Animation")
+@export var animation_tree: AnimationTree
+@export_tool_button("Play intro", "PlayStart") var play_intro = introAnimation
+@export var variation: int:
+    set(new_variation):
+        variation = new_variation
+        playAnimationVariation(variation)
+@export_tool_button("Play exit animation", "PlayStart") var play_exit = exitAnimation
+
+func introAnimation():
+    animation_tree["paramters/Blend"] = -1
+func playAnimationVariation(variation):
+    pass
+func exitAnimation():
+    pass
