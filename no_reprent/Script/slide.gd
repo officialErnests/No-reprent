@@ -76,16 +76,145 @@ func checkManager():
 
 @export_category("Animation")
 @export var animation_tree: AnimationTree
+var state_machine: AnimationNodeStateMachine
+@export_tool_button("RESET ANIMATION TREE", "Reload") var reset_animation = animationTreeReset
+@export var animation_enabled: bool:
+    set(new_animation_enabled):
+        animation_enabled = new_animation_enabled
+        animation_tree.active = animation_enabled
+@export var animation_variation: int:
+    set(new_animation_variation):
+        animation_variation = max(new_animation_variation, 0)
+        animationUpdateVariation()
 @export_tool_button("Play intro", "PlayStart") var play_intro = introAnimation
 @export var variation: int:
     set(new_variation):
-        variation = new_variation
+        variation = clamp(new_variation, 0, animation_variation)
         playAnimationVariation(variation)
 @export_tool_button("Play exit animation", "PlayStart") var play_exit = exitAnimation
 
+func animationTreeReset():
+    state_machine = animation_tree.tree_root
+    for i in state_machine.get_node_list():
+        state_machine.remove_node(i)
+
+    var t_init_nodes = {
+        "ENTRY": Vector2(0,100), 
+        "RESET": Vector2(100,0), 
+        "EXIT": Vector2(200,100)
+    }
+    animationAddNodes(t_init_nodes)
+    var t_init_transitions = [
+        {
+            "from": "Start",
+            "to": "ENTRY",
+            "x_fade": 0.2,
+            "expression": "",
+            "switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
+        },
+        {
+            "from": "ENTRY",
+            "to": "EXIT",
+            "x_fade": 0.2,
+            "expression": "!get_meta('is_playing')",
+            "switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
+        },
+        {
+            "from": "EXIT",
+            "to": "RESET",
+            "x_fade": 0,
+            "expression": "",
+            "switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_AT_END
+        },
+        {
+            "from": "RESET",
+            "to": "ENTRY",
+            "x_fade": 0,
+            "expression": "get_meta('is_playing')",
+            "switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
+        }
+    ]
+    animationAddTransitions(t_init_transitions)
+    animationUpdateVariation()
+func animationUpdateVariation():
+    var curent_size = animation_variation - (animation_tree.tree_root.get_node_list().size() - 5)
+    if curent_size > 0:
+        var t_init_nodes = {}
+        var t_init_transitions = []
+        for i in range(curent_size):
+            var t_spot = animation_variation - curent_size + i + 1
+            var t_this_name = "VAR_" + str(t_spot)
+            var t_prev_name = "VAR_" + str(t_spot - 1)
+            t_init_nodes[t_this_name] = Vector2(100,100 + t_spot * 100)
+            var t_transition = {}
+            if t_spot == 1:
+                t_transition = {
+                    "from": "ENTRY",
+                    "to": t_this_name,
+                    "x_fade": 0.2,
+                    "expression": "get_meta('variation') > 0",
+                    "switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
+                }
+                t_init_transitions.append(t_transition)
+                t_transition = {
+                    "from": t_this_name,
+                    "to": "ENTRY",
+                    "x_fade": 0.2,
+                    "expression": "get_meta('variation') <= 0",
+                    "switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
+                }
+                t_init_transitions.append(t_transition)
+            else:
+                t_transition = {
+                    "from": t_prev_name,
+                    "to": t_this_name,
+                    "x_fade": 0.2,
+                    "expression": "get_meta('variation') > " + str(t_spot - 1),
+                    "switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
+                }
+                t_init_transitions.append(t_transition)
+                t_transition = {
+                    "from": t_this_name,
+                    "to": t_prev_name,
+                    "x_fade": 0.2,
+                    "expression": "get_meta('variation') <= " + str(t_spot - 1),
+                    "switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
+                }
+                t_init_transitions.append(t_transition)
+            t_transition = {
+                "from": t_this_name,
+                "to": "EXIT",
+                "x_fade": 0.2,
+                "expression": "!get_meta('is_playing')",
+                "switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
+            }
+            t_init_transitions.append(t_transition)
+        animationAddNodes(t_init_nodes)
+        animationAddTransitions(t_init_transitions)
+    elif curent_size < 0:
+        for i in range(abs(curent_size)):
+            var t_spot = animation_variation - curent_size - i
+            state_machine.remove_node("VAR_"+str(t_spot))
+            print(t_spot)
+func animationAddNodes(p_nodes):
+    for i in p_nodes:
+        var t_Animation_node := AnimationNodeAnimation.new()
+        t_Animation_node.animation = i
+        state_machine.add_node(i, t_Animation_node, p_nodes[i])
+func animationAddTransitions(p_transitions):
+    for i in p_transitions:
+        var t_transition := AnimationNodeStateMachineTransition.new()
+        t_transition.xfade_time = i.x_fade
+        t_transition.advance_expression = i.expression
+        t_transition.switch_mode = i.switch_mode
+        t_transition.advance_mode = AnimationNodeStateMachineTransition.ADVANCE_MODE_AUTO
+        state_machine.add_transition(i.from, i.to, t_transition)
+
 func introAnimation():
-    animation_tree["paramters/Blend"] = -1
-func playAnimationVariation(variation):
-    pass
+    animation_tree.set_meta("variation", 0)
+    animation_tree.set_meta("is_playing", true)
+    variation = 0
+func playAnimationVariation(p_variation):
+    animation_tree.set_meta("variation", p_variation)
 func exitAnimation():
-    pass
+    animation_tree.set_meta("is_playing", false)
