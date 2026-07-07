@@ -174,6 +174,7 @@ func presentationStarted():
 	for child in slides_node.get_children():
 		child.slide_manager = self
 		slides.append(child)
+		child.visible = false
 	slide_amount = slides.size()
 	changeSlide(0)
 
@@ -185,12 +186,14 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Presentation_variation_backwards"): slides[curent_slide].variation -= 1
 
 func changeSlide(index:int):
+	var prev_slide = slides[curent_slide]
 	curent_slide = clamp(index, 0, slide_amount - 1)
 	slides[curent_slide].introAnimation()
+	prev_slide.visible = false
+	slides[curent_slide].visible = true
 	slides[curent_slide].camera.current = true
 
 func nextSlide():
 	exit_animation = false
-	await get_tree().create_timer(0.01).timeout
 	changeSlide(next_slide)
 	slide_variation = 0
