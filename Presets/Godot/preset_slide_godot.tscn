@@ -1,14 +1,12 @@
-[gd_scene format=3 uid="uid://bvtccspwmgemw"]
+[gd_scene format=3 uid="uid://ctyf0kwljgo31"]
 
-[ext_resource type="Script" uid="uid://bxf4w20ghprpf" path="res://no_reprent/Script/main_scene.gd" id="1_aef1x"]
-[ext_resource type="PackedScene" uid="uid://ctyf0kwljgo31" path="res://Presets/Godot/preset_slide_godot.tscn" id="2_hlteb"]
-[ext_resource type="Texture2D" uid="uid://blkb8tsjk2uh" path="res://Presets/Godot/Assets/godoticon.svg" id="4_81q1i"]
-[ext_resource type="Script" uid="uid://dq4xbtusd7orp" path="res://no_reprent/Script/slide.gd" id="4_hlteb"]
+[ext_resource type="Script" uid="uid://dq4xbtusd7orp" path="res://no_reprent/Script/slide.gd" id="1_dnqbk"]
+[ext_resource type="Texture2D" uid="uid://blkb8tsjk2uh" path="res://Presets/Godot/Assets/godoticon.svg" id="2_r1pyw"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlteb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1pyw"]
 albedo_color = Color(0.21568628, 0.23921569, 0.32156864, 1)
 
-[sub_resource type="QuadMesh" id="QuadMesh_hlteb"]
+[sub_resource type="QuadMesh" id="QuadMesh_dhklb"]
 resource_local_to_scene = true
 size = Vector2(1.777, 1)
 
@@ -98,7 +96,7 @@ xfade_time = 0.2
 advance_mode = 2
 advance_expression = "!get_meta('is_playing')"
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_81q1i"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ofllb"]
 resource_local_to_scene = true
 states/ENTRY/node = SubResource("AnimationNodeAnimation_yw7xx")
 states/ENTRY/position = Vector2(0, 100)
@@ -126,7 +124,7 @@ grow_amount = 0.01
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntqu2"]
 next_pass = SubResource("StandardMaterial3D_ofllb")
 shading_mode = 0
-albedo_texture = ExtResource("4_81q1i")
+albedo_texture = ExtResource("2_r1pyw")
 heightmap_scale = 16.0
 uv1_scale = Vector3(2, 2, 2)
 grow_amount = -0.02
@@ -390,115 +388,64 @@ font_size = 8
 horizontal_alignment = 0
 vertical_alignment = 0
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hlteb"]
-sky_top_color = Color(0.56078434, 0.8, 1, 1)
-sky_horizon_color = Color(0.859, 1.303, 1.753, 1)
-ground_bottom_color = Color(0.33252302, 0.408072, 0.5588707, 1)
-ground_horizon_color = Color(0.859, 1.303, 1.753, 1)
-ground_curve = 0.05278034
-energy_multiplier = 0.3
-
-[sub_resource type="Sky" id="Sky_81q1i"]
-sky_material = SubResource("ProceduralSkyMaterial_hlteb")
-
-[sub_resource type="Environment" id="Environment_uyttj"]
-background_mode = 2
-background_color = Color(1, 1, 1, 1)
-sky = SubResource("Sky_81q1i")
-ambient_light_source = 3
-reflected_light_source = 2
-tonemap_mode = 3
-ssr_fade_in = 0.09233579
-ssao_enabled = true
-ssil_radius = 0.01
-ssil_intensity = 4.44
-sdfgi_enabled = true
-glow_enabled = true
-glow_bloom = 0.05
-adjustment_enabled = true
-
-[node name="GodotPresentationMain" type="Node3D" unique_id=1327633279]
-
-[node name="Main_scene" type="Node3D" parent="." unique_id=1282011518 node_paths=PackedStringArray("slides")]
-script = ExtResource("1_aef1x")
-slide_preset = ExtResource("2_hlteb")
-slides = [NodePath("nb_slides/slide_1")]
-
-[node name="nb_trash" type="Node3D" parent="Main_scene" unique_id=583480922]
-visible = false
-
-[node name="nb_slides" type="Node3D" parent="Main_scene" unique_id=1335640339]
-
-[node name="slide_1" parent="Main_scene/nb_slides" unique_id=1142204227 node_paths=PackedStringArray("camera", "animation_tree") instance=ExtResource("2_hlteb")]
-script = ExtResource("4_hlteb")
+[node name="preset_slide" type="Node3D" unique_id=1142204227 node_paths=PackedStringArray("camera", "animation_tree")]
+script = ExtResource("1_dnqbk")
 camera = NodePath("Camera3D")
 animation_tree = NodePath("AnimationTree")
 animation_enabled = true
 animation_variation = 2
 
-[node name="Camera3D" parent="Main_scene/nb_slides/slide_1" index="0" unique_id=724262419]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=724262419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 projection = 1
 
-[node name="MeshInstance3D" parent="Main_scene/nb_slides/slide_1" index="1" unique_id=517713459]
-material_override = SubResource("StandardMaterial3D_hlteb")
-mesh = SubResource("QuadMesh_hlteb")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=517713459]
+material_override = SubResource("StandardMaterial3D_r1pyw")
+mesh = SubResource("QuadMesh_dhklb")
 
-[node name="AnimationPlayer" parent="Main_scene/nb_slides/slide_1" index="2" unique_id=1686066139]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1686066139]
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_8qkx7")
 
-[node name="AnimationTree" parent="Main_scene/nb_slides/slide_1" index="3" unique_id=1900974208]
-tree_root = SubResource("AnimationNodeStateMachine_81q1i")
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1900974208]
+tree_root = SubResource("AnimationNodeStateMachine_ofllb")
 anim_player = NodePath("../AnimationPlayer")
 metadata/is_playing = false
 metadata/variation = 0
 
-[node name="Godot ball" parent="Main_scene/nb_slides/slide_1" index="4" unique_id=1070132721]
+[node name="Godot ball" type="MeshInstance3D" parent="." unique_id=1070132721]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.7, -0.3, 0.2)
 material_override = SubResource("StandardMaterial3D_ntqu2")
 mesh = SubResource("BoxMesh_dhklb")
 
-[node name="Godot ball3" parent="Main_scene/nb_slides/slide_1" index="5" unique_id=1509651319]
-transform = Transform3D(-0.23259078, -0.76979244, -0.59440804, 0.39753067, 0.48253688, -0.78046614, 0.8876207, -0.41782463, 0.19378255, 0.72202724, -0.1716792, 0.1)
+[node name="Godot ball3" type="MeshInstance3D" parent="." unique_id=1509651319]
+transform = Transform3D(-0.2325908, -0.7697925, -0.59440804, 0.3975307, 0.4825369, -0.78046614, 0.88762075, -0.41782466, 0.19378255, 0.72202724, -0.1716792, 0.1)
 material_override = SubResource("StandardMaterial3D_ntqu2")
 mesh = SubResource("BoxMesh_r1pyw")
 
-[node name="Godot ball2" parent="Main_scene/nb_slides/slide_1" index="6" unique_id=1341962709]
+[node name="Godot ball2" type="MeshInstance3D" parent="." unique_id=1341962709]
 transform = Transform3D(0.35003078, 0.07882111, 0.9334162, 0.024232106, -0.9968821, 0.075093366, 0.9364248, -0.0036663525, -0.3508494, 0.5640494, -0.26404944, 0.4)
 material_override = SubResource("StandardMaterial3D_ntqu2")
 mesh = SubResource("BoxMesh_ntqu2")
 
-[node name="Godot ball spin" parent="Main_scene/nb_slides/slide_1" index="7" unique_id=557223100]
+[node name="Godot ball spin" type="AnimationPlayer" parent="." unique_id=557223100]
 root_node = NodePath("../Godot ball")
 libraries/ = SubResource("AnimationLibrary_qb5al")
 autoplay = &"spinn"
 speed_scale = 0.1
 
-[node name="H1" parent="Main_scene/nb_slides/slide_1" index="8" unique_id=1639244705]
+[node name="H1" type="MeshInstance3D" parent="." unique_id=1639244705]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.20000002, 1)
 mesh = SubResource("TextMesh_ofllb")
 
-[node name="h2" parent="Main_scene/nb_slides/slide_1" index="9" unique_id=1261551803]
+[node name="h2" type="MeshInstance3D" parent="." unique_id=1261551803]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.20000002, 1)
 mesh = SubResource("TextMesh_r1pyw")
 
-[node name="OmniLight3D" parent="Main_scene/nb_slides/slide_1" index="10" unique_id=1137087864]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1137087864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
 light_energy = 2.0
 light_size = 0.25
 shadow_enabled = true
 shadow_blur = 2.0
 omni_range = 10.0
-
-[node name="nb_aligner" type="Node3D" parent="Main_scene" unique_id=202618719]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036516159]
-environment = SubResource("Environment_uyttj")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1456896137]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -2, 0, 0)
-light_color = Color(1, 1, 0.84313726, 1)
-light_specular = 0.0
-
-[editable path="Main_scene/nb_slides/slide_1"]
