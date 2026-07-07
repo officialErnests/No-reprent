@@ -15,40 +15,16 @@ size = Vector2(1.777, 1)
 [sub_resource type="Animation" id="Animation_8qkx7"]
 resource_name = "ENTRY"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_yw7xx"]
 resource_name = "EXIT"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("H1/AnimationTree:parameters/conditions/Exit")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("H1/AnimationTree:parameters/conditions/Exit")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -60,7 +36,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("H1/AnimationTree:parameters/conditions/Exit")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -72,14 +48,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("H1/AnimationTree:parameters/conditions/Exit")
+tracks/1/path = NodePath("OmniLight3D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bsae4"]
@@ -229,212 +205,200 @@ size = Vector2(1.777, 1)
 
 [sub_resource type="Animation" id="Animation_yjplb"]
 resource_name = "ENTRY"
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("h2:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-1.2, 0, 0, 0.2, 0.6319149, -0.8, -0.099999964, -0.010795951, 0.1, 0),
+"times": PackedFloat32Array(0, 0.9)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("h2:position:x")
+tracks/1/path = NodePath("h2:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(-1.2, 0, 0, 0.2, 0.6319149, -0.8, -0.099999964, -0.010795951, 0.1, 0),
+"points": PackedFloat32Array(0.20000002, 0, 0, 0.033333335, 0, 0.20000002, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0, 0.9)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("h2:position:y")
+tracks/2/path = NodePath("h2:position:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(0.20000002, 0, 0, 0.033333335, 0, 0.20000002, -0.1, 0, 0.1, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.033333335, 0, 1, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0, 0.9)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("h2:position:z")
+tracks/3/path = NodePath("h3:position:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(1, 0, 0, 0.033333335, 0, 1, -0.1, 0, 0.1, 0),
-"times": PackedFloat32Array(0, 0.9)
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-1.5, 0, 0, 0.23333333, 1.1341739, -0.8, -0.100000024, -0.11481488, 0, 0),
+"times": PackedFloat32Array(0.10000001, 1)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("h3:position:x")
+tracks/4/path = NodePath("h3:position:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(-1.5, 0, 0, 0.23333333, 1.1341739, -0.8, -0.100000024, -0.11481488, 0, 0),
+"points": PackedFloat32Array(0.10000002, 0, 0, 0.16666667, -0.009298697, 0.10000002, -0.16666669, -0.015077524, 0, 0),
 "times": PackedFloat32Array(0.10000001, 1)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("h3:position:y")
+tracks/5/path = NodePath("h3:position:z")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(0.10000002, 0, 0, 0.16666667, -0.009298697, 0.10000002, -0.16666669, -0.015077524, 0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.15, 0, 1, -0.15, 0, 0, 0),
 "times": PackedFloat32Array(0.10000001, 1)
 }
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("h3:position:z")
+tracks/6/path = NodePath("H1:position:x")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(1, 0, 0, 0.15, 0, 1, -0.15, 0, 0, 0),
-"times": PackedFloat32Array(0.10000001, 1)
+"handle_modes": PackedInt32Array(1, 0),
+"points": PackedFloat32Array(-0.8, 0, 0, 0, 0, -0.8, -0.23333335, 0.11633831, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
 }
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("H1:position:x")
+tracks/7/path = NodePath("H1:position:y")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "handle_modes": PackedInt32Array(1, 0),
-"points": PackedFloat32Array(-0.8, 0, 0, 0, 0, -0.8, -0.23333335, 0.11633831, 0.25, 0),
+"points": PackedFloat32Array(0.5, 0, 0, 0, 0, 0.20000002, -0.26666665, -0.25954825, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("H1:position:y")
+tracks/8/path = NodePath("H1:position:z")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "handle_modes": PackedInt32Array(1, 0),
-"points": PackedFloat32Array(0.5, 0, 0, 0, 0, 0.20000002, -0.26666665, -0.25954825, 0.25, 0),
+"points": PackedFloat32Array(1, 0, 0, 0, 0, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/9/type = "bezier"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("H1:position:z")
+tracks/9/path = NodePath("Godot ball3:scale:x")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "handle_modes": PackedInt32Array(1, 0),
-"points": PackedFloat32Array(1, 0, 0, 0, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.19999999, 0.5671921, 0.25, 0),
+"times": PackedFloat32Array(0, 0.36666667)
 }
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Godot ball3:scale:x")
+tracks/10/path = NodePath("Godot ball3:scale:y")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "handle_modes": PackedInt32Array(1, 0),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.19999999, 0.5671921, 0.25, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.23333335, 0.5267402, 0.25, 0),
 "times": PackedFloat32Array(0, 0.36666667)
 }
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Godot ball3:scale:y")
+tracks/11/path = NodePath("Godot ball3:scale:z")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "handle_modes": PackedInt32Array(1, 0),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.23333335, 0.5267402, 0.25, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.23333335, 0.5382979, 0.25, 0),
 "times": PackedFloat32Array(0, 0.36666667)
 }
 tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Godot ball3:scale:z")
+tracks/12/path = NodePath("Godot ball:scale:x")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"handle_modes": PackedInt32Array(1, 0),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.23333335, 0.5382979, 0.25, 0),
-"times": PackedFloat32Array(0, 0.36666667)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.19999999, 0.5440767, 0.25, 0),
+"times": PackedFloat32Array(0.16666667, 0.56666666)
 }
 tracks/13/type = "bezier"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Godot ball:scale:x")
+tracks/13/path = NodePath("Godot ball:scale:y")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.19999999, 0.5440767, 0.25, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.19999999, 0.5325191, 0.25, 0),
 "times": PackedFloat32Array(0.16666667, 0.56666666)
 }
 tracks/14/type = "bezier"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Godot ball:scale:y")
+tracks/14/path = NodePath("Godot ball:scale:z")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.19999999, 0.5325191, 0.25, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.19999999, 0.5209614, 0.25, 0),
 "times": PackedFloat32Array(0.16666667, 0.56666666)
 }
 tracks/15/type = "bezier"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Godot ball:scale:z")
+tracks/15/path = NodePath("Godot ball2:scale:x")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.19999999, 0.5209614, 0.25, 0),
-"times": PackedFloat32Array(0.16666667, 0.56666666)
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.23333335, 0.5209614, 0.25, 0),
+"times": PackedFloat32Array(0.43333334, 0.76666665)
 }
 tracks/16/type = "bezier"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Godot ball2:scale:x")
+tracks/16/path = NodePath("Godot ball2:scale:y")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.23333335, 0.5209614, 0.25, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.23333335, 0.49206722, 0.25, 0),
 "times": PackedFloat32Array(0.43333334, 0.76666665)
 }
 tracks/17/type = "bezier"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Godot ball2:scale:y")
+tracks/17/path = NodePath("Godot ball2:scale:z")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.23333335, 0.49206722, 0.25, 0),
-"times": PackedFloat32Array(0.43333334, 0.76666665)
-}
-tracks/18/type = "bezier"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("Godot ball2:scale:z")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, 0, 0, 0, 0, 1, -0.23333335, 0.5267402, 0.25, 0),
 "times": PackedFloat32Array(0.43333334, 0.76666665)
@@ -443,80 +407,68 @@ tracks/18/keys = {
 [sub_resource type="Animation" id="Animation_5hsgs"]
 resource_name = "EXIT"
 length = 0.5
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("h3:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.8, -0.25, 0, 0.26666668, -0.013685346, -1.5, -0.100000024, 1.3624376, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("h3:position:x")
+tracks/1/path = NodePath("h3:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-0.8, -0.25, 0, 0.26666668, -0.013685346, -1.5, -0.100000024, 1.3624376, 0, 0),
+"points": PackedFloat32Array(0.10000002, -0.25, 0, 0.26666668, -0.18555297, 0.10000002, 0, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("h3:position:y")
+tracks/2/path = NodePath("h3:position:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.10000002, -0.25, 0, 0.26666668, -0.18555297, 0.10000002, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("h3:position:z")
+tracks/3/path = NodePath("h2:position:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0),
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-0.8, -0.25, 0, 0.36666667, 0.24636191, -1.1835304, -0.06666666, 0.9419491, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("h2:position:x")
+tracks/4/path = NodePath("h2:position:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-0.8, -0.25, 0, 0.36666667, 0.24636191, -1.1835304, -0.06666666, 0.9419491, 0, 0),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.20000002, -0.25, 0, 0.23333333, -0.05439982, 0.20000002, 0, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("h2:position:y")
+tracks/5/path = NodePath("h2:position:z")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.20000002, -0.25, 0, 0.23333333, -0.05439982, 0.20000002, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("h2:position:z")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
@@ -527,131 +479,130 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("h2:mesh:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": ["START"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("h2:mesh:text")
+tracks/1/path = NodePath("h3:mesh:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["START"]
+"values": ["by n0o0b090lv"]
 }
-tracks/2/type = "value"
+tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("h3:mesh:text")
+tracks/2/path = NodePath("h2:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["by n0o0b090lv"]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.8, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("h2:position:x")
+tracks/3/path = NodePath("h2:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.8, -0.1, 0, 0.1, 0),
+"points": PackedFloat32Array(0.20000002, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("h2:position:y")
+tracks/4/path = NodePath("h2:position:z")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.20000002, -0.1, 0, 0.1, 0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("h2:position:z")
+tracks/5/path = NodePath("h3:position:x")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"points": PackedFloat32Array(-0.8, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("h3:position:x")
+tracks/6/path = NodePath("h3:position:y")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.8, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.10000002, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("h3:position:y")
+tracks/7/path = NodePath("h3:position:z")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.10000002, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("h3:position:z")
+tracks/8/path = NodePath("H1:position:x")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-0.8, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/9/type = "bezier"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("H1:position:x")
+tracks/9/path = NodePath("H1:position:y")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.8, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.20000002, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("H1:position:y")
+tracks/10/path = NodePath("H1:position:z")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.20000002, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("H1:position:z")
+tracks/11/path = NodePath("Godot ball3:scale:x")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -662,7 +613,7 @@ tracks/11/keys = {
 tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Godot ball3:scale:x")
+tracks/12/path = NodePath("Godot ball3:scale:y")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -673,7 +624,7 @@ tracks/12/keys = {
 tracks/13/type = "bezier"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Godot ball3:scale:y")
+tracks/13/path = NodePath("Godot ball3:scale:z")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -684,7 +635,7 @@ tracks/13/keys = {
 tracks/14/type = "bezier"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Godot ball3:scale:z")
+tracks/14/path = NodePath("Godot ball:scale:x")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -695,7 +646,7 @@ tracks/14/keys = {
 tracks/15/type = "bezier"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Godot ball:scale:x")
+tracks/15/path = NodePath("Godot ball:scale:y")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -706,7 +657,7 @@ tracks/15/keys = {
 tracks/16/type = "bezier"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Godot ball:scale:y")
+tracks/16/path = NodePath("Godot ball:scale:z")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -717,7 +668,7 @@ tracks/16/keys = {
 tracks/17/type = "bezier"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Godot ball:scale:z")
+tracks/17/path = NodePath("Godot ball2:scale:x")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -728,7 +679,7 @@ tracks/17/keys = {
 tracks/18/type = "bezier"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Godot ball2:scale:x")
+tracks/18/path = NodePath("Godot ball2:scale:y")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -739,21 +690,10 @@ tracks/18/keys = {
 tracks/19/type = "bezier"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Godot ball2:scale:y")
+tracks/19/path = NodePath("Godot ball2:scale:z")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/20/type = "bezier"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("Godot ball2:scale:z")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
@@ -764,22 +704,10 @@ resource_name = "VAR_1"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("h2:mesh:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("h2:mesh:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -791,22 +719,10 @@ resource_name = "VAR_2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("h3:mesh:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("h3:mesh:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1195,33 +1111,129 @@ size = Vector2(1.777, 1)
 [sub_resource type="Animation" id="Animation_amdmt"]
 resource_name = "ENTRY"
 length = 0.2
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("Options/AnimationTree:metadata/selection")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1.266693, 0, 0, 0.033333335, 0, 1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0.033333335, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Options:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.033333335, 0.16666667, 1, -0.1, 0.56141317, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Options:scale:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.033333335, 0, 1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
 }
 
 [sub_resource type="Animation" id="Animation_4u7ox"]
 resource_name = "EXIT"
-length = 0.2
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("Options/AnimationTree:metadata/selection")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("H1:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-0.8, -0.25, 0, 0.25, 0, -0.79999995, -0.16666667, -9.934108e-09, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("H1:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.20000002, -0.25, 0, 0.46666667, -0.0023903698, 0.5, -0.56666666, -0.088573694, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("H1:position:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Options:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.7, 0.6769898, -0.01042818, -0.43333334, -1.0748621, 0, 0, 0, -0.100000024, 0.3074074, 0, 0),
+"times": PackedFloat32Array(0, 0.8, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Options:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Options:scale:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
 }
 
 [sub_resource type="Animation" id="Animation_6gtyf"]
@@ -1236,39 +1248,170 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options/AnimationTree:metadata/selection")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Options:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Options:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Options:scale:z")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("H1:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("H1:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.20000002, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("H1:position:z")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_1e6lu"]
 resource_name = "VAR_1"
 length = 0.2
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("Options/AnimationTree:metadata/selection")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_8ru10"]
 resource_name = "VAR_2"
 length = 0.2
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("Options/AnimationTree:metadata/selection")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_6my8b"]
+resource_name = "VAR_3"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options/AnimationTree:metadata/selection")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_uqcvj"]
+resource_name = "VAR_4"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options/AnimationTree:metadata/selection")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_u0nrs"]
+resource_name = "VAR_5"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options/AnimationTree:metadata/selection")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_o0y0x"]
+resource_name = "VAR_6"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options/AnimationTree:metadata/selection")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_68myx"]
@@ -1277,7 +1420,11 @@ _data = {
 &"EXIT": SubResource("Animation_4u7ox"),
 &"RESET": SubResource("Animation_6gtyf"),
 &"VAR_1": SubResource("Animation_1e6lu"),
-&"VAR_2": SubResource("Animation_8ru10")
+&"VAR_2": SubResource("Animation_8ru10"),
+&"VAR_3": SubResource("Animation_6my8b"),
+&"VAR_4": SubResource("Animation_uqcvj"),
+&"VAR_5": SubResource("Animation_u0nrs"),
+&"VAR_6": SubResource("Animation_o0y0x")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8qkx7"]
@@ -1288,6 +1435,21 @@ animation = &"EXIT"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l31vc"]
 animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_amdmt"]
+animation = &"VAR_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4u7ox"]
+animation = &"VAR_2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6gtyf"]
+animation = &"VAR_3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_68myx"]
+animation = &"VAR_4"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1e6lu"]
+animation = &"VAR_5"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1e6lu"]
 xfade_time = 0.2
@@ -1306,6 +1468,81 @@ advance_mode = 2
 advance_mode = 2
 advance_expression = "get_meta('is_playing')"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5hsgs"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') > 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_np67j"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') <= 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_72gad"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "!get_meta('is_playing')"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sd8fv"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') > 1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6my8b"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') <= 1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uqcvj"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "!get_meta('is_playing')"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u0nrs"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') > 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o0y0x"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') <= 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w6k2n"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "!get_meta('is_playing')"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wrbi8"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') > 3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ayewu"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') <= 3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b6fwa"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "!get_meta('is_playing')"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b7p0r"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') > 4"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2crnn"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') <= 4"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ab26b"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "!get_meta('is_playing')"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4u7ox"]
 resource_local_to_scene = true
 states/ENTRY/node = SubResource("AnimationNodeAnimation_8qkx7")
@@ -1316,7 +1553,17 @@ states/End/position = Vector2(660, 153)
 states/RESET/node = SubResource("AnimationNodeAnimation_l31vc")
 states/RESET/position = Vector2(100, 0)
 states/Start/position = Vector2(-188, 100)
-transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_1e6lu"), "ENTRY", "EXIT", SubResource("AnimationNodeStateMachineTransition_8ru10"), "EXIT", "RESET", SubResource("AnimationNodeStateMachineTransition_bsae4"), "RESET", "ENTRY", SubResource("AnimationNodeStateMachineTransition_yjplb")]
+states/VAR_1/node = SubResource("AnimationNodeAnimation_amdmt")
+states/VAR_1/position = Vector2(100, 200)
+states/VAR_2/node = SubResource("AnimationNodeAnimation_4u7ox")
+states/VAR_2/position = Vector2(100, 300)
+states/VAR_3/node = SubResource("AnimationNodeAnimation_6gtyf")
+states/VAR_3/position = Vector2(100, 400)
+states/VAR_4/node = SubResource("AnimationNodeAnimation_68myx")
+states/VAR_4/position = Vector2(100, 500)
+states/VAR_5/node = SubResource("AnimationNodeAnimation_1e6lu")
+states/VAR_5/position = Vector2(100, 600)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_1e6lu"), "ENTRY", "EXIT", SubResource("AnimationNodeStateMachineTransition_8ru10"), "EXIT", "RESET", SubResource("AnimationNodeStateMachineTransition_bsae4"), "RESET", "ENTRY", SubResource("AnimationNodeStateMachineTransition_yjplb"), "ENTRY", "VAR_1", SubResource("AnimationNodeStateMachineTransition_5hsgs"), "VAR_1", "ENTRY", SubResource("AnimationNodeStateMachineTransition_np67j"), "VAR_1", "EXIT", SubResource("AnimationNodeStateMachineTransition_72gad"), "VAR_1", "VAR_2", SubResource("AnimationNodeStateMachineTransition_sd8fv"), "VAR_2", "VAR_1", SubResource("AnimationNodeStateMachineTransition_6my8b"), "VAR_2", "EXIT", SubResource("AnimationNodeStateMachineTransition_uqcvj"), "VAR_2", "VAR_3", SubResource("AnimationNodeStateMachineTransition_u0nrs"), "VAR_3", "VAR_2", SubResource("AnimationNodeStateMachineTransition_o0y0x"), "VAR_3", "EXIT", SubResource("AnimationNodeStateMachineTransition_w6k2n"), "VAR_3", "VAR_4", SubResource("AnimationNodeStateMachineTransition_wrbi8"), "VAR_4", "VAR_3", SubResource("AnimationNodeStateMachineTransition_ayewu"), "VAR_4", "EXIT", SubResource("AnimationNodeStateMachineTransition_b6fwa"), "VAR_4", "VAR_5", SubResource("AnimationNodeStateMachineTransition_b7p0r"), "VAR_5", "VAR_4", SubResource("AnimationNodeStateMachineTransition_2crnn"), "VAR_5", "EXIT", SubResource("AnimationNodeStateMachineTransition_ab26b")]
 graph_offset = Vector2(-587, -21)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfg3e"]
@@ -1628,6 +1875,659 @@ font_size = 8
 horizontal_alignment = 0
 vertical_alignment = 0
 
+[sub_resource type="Animation" id="Animation_68myx"]
+resource_name = "0"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("#0:mesh:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["> 0 - Dowload // setup"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("#1:mesh:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["1 - Editor"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("#2:mesh:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["2 - Godot basics"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("#3:mesh:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3 - gdscript
+"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("#4:mesh:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["4 - PRACTICAL"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("#5:mesh:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["5 - CREDITS"]
+}
+
+[sub_resource type="Animation" id="Animation_o7yfo"]
+resource_name = "1"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("#0:mesh:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["0 - Dowload // setup"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("#1:mesh:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["> 1 - Editor"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("#2:mesh:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["2 - Godot basics"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("#3:mesh:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3 - gdscript
+"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("#4:mesh:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["4 - PRACTICAL"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("#5:mesh:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["5 - CREDITS"]
+}
+
+[sub_resource type="Animation" id="Animation_ynrhn"]
+resource_name = "2"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("#0:mesh:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["0 - Dowload // setup"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("#1:mesh:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["1 - Editor"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("#2:mesh:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["> 2 - Godot basics"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("#3:mesh:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3 - gdscript
+"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("#4:mesh:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["4 - PRACTICAL"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("#5:mesh:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["5 - CREDITS"]
+}
+
+[sub_resource type="Animation" id="Animation_5unyt"]
+resource_name = "3"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("#0:mesh:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["0 - Dowload // setup"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("#1:mesh:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["1 - Editor"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("#2:mesh:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["2 - Godot basics"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("#3:mesh:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["> 3 - gdscript
+"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("#4:mesh:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["4 - PRACTICAL"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("#5:mesh:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["5 - CREDITS"]
+}
+
+[sub_resource type="Animation" id="Animation_7i23d"]
+resource_name = "4"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("#0:mesh:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["0 - Dowload // setup"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("#1:mesh:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["1 - Editor"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("#2:mesh:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["2 - Godot basics"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("#3:mesh:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3 - gdscript
+"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("#4:mesh:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [">4 - PRACTICAL"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("#5:mesh:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["5 - CREDITS"]
+}
+
+[sub_resource type="Animation" id="Animation_rwgvr"]
+resource_name = "5"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("#0:mesh:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["0 - Dowload // setup"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("#1:mesh:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["1 - Editor"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("#2:mesh:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["2 - Godot basics"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("#3:mesh:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3 - gdscript
+"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("#4:mesh:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["4 - PRACTICAL"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("#5:mesh:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["> 5 - CREDITS"]
+}
+
+[sub_resource type="Animation" id="Animation_bsae4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("#0:mesh:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["0 - Dowload // setup"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("#1:mesh:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["1 - Editor"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("#2:mesh:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["2 - Godot basics"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("#3:mesh:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3 - gdscript
+"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("#4:mesh:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["4 - PRACTICAL"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("#5:mesh:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["5 - CREDITS"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yjplb"]
+_data = {
+&"0": SubResource("Animation_68myx"),
+&"1": SubResource("Animation_o7yfo"),
+&"2": SubResource("Animation_ynrhn"),
+&"3": SubResource("Animation_5unyt"),
+&"4": SubResource("Animation_7i23d"),
+&"5": SubResource("Animation_rwgvr"),
+&"RESET": SubResource("Animation_bsae4")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v840l"]
+animation = &"0"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f7541"]
+animation = &"1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h7bif"]
+animation = &"2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xuah3"]
+animation = &"3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xse0d"]
+animation = &"4"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j3nl2"]
+animation = &"5"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wjf5l"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lde1t"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yqf13"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") > -1
+"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dc5g7"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") > 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dmdc0"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") > 1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_onbio"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") > 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_052qw"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") > 3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_trmqt"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") > 4"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dp4yo"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") <= 4"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hgnsq"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") <= 3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ymcys"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") <= 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a83ly"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") <= 1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8m620"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") <= 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bgdkf"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta(\"selection\") <= -1
+"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ofllb"]
+states/0/node = SubResource("AnimationNodeAnimation_v840l")
+states/0/position = Vector2(406, 93)
+states/1/node = SubResource("AnimationNodeAnimation_f7541")
+states/1/position = Vector2(406, 157)
+states/2/node = SubResource("AnimationNodeAnimation_h7bif")
+states/2/position = Vector2(406, 228)
+states/3/node = SubResource("AnimationNodeAnimation_xuah3")
+states/3/position = Vector2(406, 292)
+states/4/node = SubResource("AnimationNodeAnimation_xse0d")
+states/4/position = Vector2(406, 361)
+states/5/node = SubResource("AnimationNodeAnimation_j3nl2")
+states/5/position = Vector2(406, 433)
+states/RESET/node = SubResource("AnimationNodeAnimation_wjf5l")
+states/RESET/position = Vector2(406, 22)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_lde1t"), "RESET", "0", SubResource("AnimationNodeStateMachineTransition_yqf13"), "0", "1", SubResource("AnimationNodeStateMachineTransition_dc5g7"), "1", "2", SubResource("AnimationNodeStateMachineTransition_dmdc0"), "2", "3", SubResource("AnimationNodeStateMachineTransition_onbio"), "3", "4", SubResource("AnimationNodeStateMachineTransition_052qw"), "4", "5", SubResource("AnimationNodeStateMachineTransition_trmqt"), "5", "4", SubResource("AnimationNodeStateMachineTransition_dp4yo"), "4", "3", SubResource("AnimationNodeStateMachineTransition_hgnsq"), "3", "2", SubResource("AnimationNodeStateMachineTransition_ymcys"), "2", "1", SubResource("AnimationNodeStateMachineTransition_a83ly"), "1", "0", SubResource("AnimationNodeStateMachineTransition_8m620"), "0", "RESET", SubResource("AnimationNodeStateMachineTransition_bgdkf")]
+graph_offset = Vector2(-167, -48)
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hlteb"]
 sky_top_color = Color(0.56078434, 0.8, 1, 1)
 sky_horizon_color = Color(0.859, 1.303, 1.753, 1)
@@ -1671,7 +2571,6 @@ visible = false
 script = ExtResource("4_hlteb")
 camera = NodePath("Camera3D")
 animation_tree = NodePath("AnimationTree")
-animation_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="Main_scene/nb_slides/Wait" unique_id=724262419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
@@ -1686,6 +2585,7 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_bsae4")
 
 [node name="AnimationTree" type="AnimationTree" parent="Main_scene/nb_slides/Wait" unique_id=1900974208]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_81q1i")
 anim_player = NodePath("../AnimationPlayer")
 metadata/is_playing = false
@@ -1713,7 +2613,6 @@ mesh = SubResource("TextMesh_x7vlt")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Main_scene/nb_slides/Wait" unique_id=1137087864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 5)
-visible = false
 light_energy = 2.0
 light_size = 0.25
 shadow_enabled = true
@@ -1770,7 +2669,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.554, 0, 0)
 script = ExtResource("4_hlteb")
 camera = NodePath("Camera3D")
 animation_tree = NodePath("AnimationTree")
-animation_enabled = true
+animation_variation = 5
+branching = Array[int]([-1, -1, -1, -1, -1])
 
 [node name="Camera3D" type="Camera3D" parent="Main_scene/nb_slides/Start_options" unique_id=1545738699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
@@ -1785,9 +2685,10 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_68myx")
 
 [node name="AnimationTree" type="AnimationTree" parent="Main_scene/nb_slides/Start_options" unique_id=1151944654]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_4u7ox")
 anim_player = NodePath("../AnimationPlayer")
-metadata/is_playing = false
+metadata/is_playing = true
 metadata/variation = 0
 
 [node name="Godot ball" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options" unique_id=506569613]
@@ -1816,33 +2717,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.20000002, 1)
 material_override = SubResource("StandardMaterial3D_np67j")
 mesh = SubResource("TextMesh_72gad")
 
-[node name="#0" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options" unique_id=683036019]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.20000002, 1)
+[node name="Options" type="Node3D" parent="Main_scene/nb_slides/Start_options" unique_id=1226273953]
+
+[node name="#0" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options/Options" unique_id=683036019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79999995, 0.20000002, 1)
 mesh = SubResource("TextMesh_sd8fv")
 
-[node name="#1" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options" unique_id=1071353149]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5999999, 0.40000004, 2)
+[node name="#1" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options/Options" unique_id=1071353149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.1, 1)
 mesh = SubResource("TextMesh_81q1i")
 
-[node name="#2" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options" unique_id=14264913]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1999998, 0.8000001, 4)
+[node name="#2" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options/Options" unique_id=14264913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 1)
 mesh = SubResource("TextMesh_uyttj")
 
-[node name="#3" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options" unique_id=1602136078]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3999996, 1.6000001, 8)
+[node name="#3" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options/Options" unique_id=1602136078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, -0.1, 1)
 mesh = SubResource("TextMesh_amdmt")
 
-[node name="#4" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options" unique_id=805711926]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.799999, 3.2000003, 16)
+[node name="#4" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options/Options" unique_id=805711926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, -0.2, 1)
 mesh = SubResource("TextMesh_4u7ox")
 
-[node name="#5" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options" unique_id=830588010]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.199999, 4.8, 24)
+[node name="#5" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options/Options" unique_id=830588010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, -0.3, 1)
 mesh = SubResource("TextMesh_6gtyf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_scene/nb_slides/Start_options/Options" unique_id=1488310185]
+libraries/ = SubResource("AnimationLibrary_yjplb")
+
+[node name="AnimationTree" type="AnimationTree" parent="Main_scene/nb_slides/Start_options/Options" unique_id=20290715]
+tree_root = SubResource("AnimationNodeStateMachine_ofllb")
+anim_player = NodePath("../AnimationPlayer")
+metadata/selection = -1.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Main_scene/nb_slides/Start_options" unique_id=4225455]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 5)
-visible = false
 light_energy = 2.0
 light_size = 0.25
 shadow_enabled = true
