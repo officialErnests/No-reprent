@@ -67,7 +67,8 @@ func vailidateChildren():
 			slides_node.add_child(temp_slide)
 			temp_slide.slide_manager = self
 			temp_slide.owner = get_tree().edited_scene_root
-			get_tree().get_edited_scene_root().set_editable_instance(temp_slide, true)
+			# Pov no editable children XDD, make it local
+			# get_tree().get_edited_scene_root().set_editable_instance(temp_slide, true)
 			# Adds slide to the last position, for comfy ;bb
 			var temp_list = slides_node.get_children()
 			if temp_list.size() == 0:

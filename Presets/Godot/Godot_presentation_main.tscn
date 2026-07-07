@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ctyf0kwljgo31" path="res://Presets/Godot/preset_slide_godot.tscn" id="2_hlteb"]
 [ext_resource type="Texture2D" uid="uid://blkb8tsjk2uh" path="res://Presets/Godot/Assets/godoticon.svg" id="4_81q1i"]
 [ext_resource type="Script" uid="uid://dq4xbtusd7orp" path="res://no_reprent/Script/slide.gd" id="4_hlteb"]
+[ext_resource type="Texture2D" uid="uid://caiwgag5c77x0" path="res://Presets/Godot/Assets/qr-code-godot.png" id="5_uyttj"]
+[ext_resource type="Texture2D" uid="uid://crcqfrvgj83g0" path="res://Presets/Godot/Assets/godot-steam.png" id="6_amdmt"]
+[ext_resource type="Texture2D" uid="uid://5c8g21bthktg" path="res://Presets/Godot/Assets/scr_1/godot_main.png" id="7_amdmt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1pyw"]
 albedo_color = Color(0.21568628, 0.23921569, 0.32156864, 1)
@@ -1253,109 +1256,115 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Options/AnimationTree:metadata/selection")
+tracks/1/path = NodePath("H1:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1, -0.0005, 0, 0.0005, 0),
+"points": PackedFloat32Array(-0.8, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Options:scale:x")
+tracks/2/path = NodePath("H1:position:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"points": PackedFloat32Array(0.20000002, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Options:scale:y")
+tracks/3/path = NodePath("H1:position:z")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
-tracks/4/type = "bezier"
+tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Options:scale:z")
+tracks/4/path = NodePath("Options:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
 }
-tracks/5/type = "bezier"
+tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("H1:position:x")
+tracks/5/path = NodePath("Options/AnimationTree:metadata/selection")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.8, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("H1:position:y")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.20000002, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("H1:position:z")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.0]
 }
 
 [sub_resource type="Animation" id="Animation_1e6lu"]
 resource_name = "VAR_1"
 length = 0.2
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Options/AnimationTree:metadata/selection")
+tracks/0/path = NodePath("Options:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.1, 0, 0.1, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options/AnimationTree:metadata/selection")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_8ru10"]
 resource_name = "VAR_2"
 length = 0.2
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Options/AnimationTree:metadata/selection")
+tracks/0/path = NodePath("Options:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options/AnimationTree:metadata/selection")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_6my8b"]
@@ -1371,6 +1380,18 @@ tracks/0/keys = {
 "points": PackedFloat32Array(2, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_uqcvj"]
 resource_name = "VAR_4"
@@ -1384,6 +1405,18 @@ tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(3, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_u0nrs"]
@@ -1399,6 +1432,18 @@ tracks/0/keys = {
 "points": PackedFloat32Array(4, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_o0y0x"]
 resource_name = "VAR_6"
@@ -1412,6 +1457,18 @@ tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_68myx"]
@@ -1427,71 +1484,33 @@ _data = {
 &"VAR_6": SubResource("Animation_o0y0x")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8qkx7"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_amdmt"]
 animation = &"ENTRY"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yw7xx"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4u7ox"]
 animation = &"EXIT"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l31vc"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6gtyf"]
 animation = &"RESET"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_amdmt"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_68myx"]
 animation = &"VAR_1"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4u7ox"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1e6lu"]
 animation = &"VAR_2"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6gtyf"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ru10"]
 animation = &"VAR_3"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_68myx"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bsae4"]
 animation = &"VAR_4"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1e6lu"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sd8fv"]
 animation = &"VAR_5"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1e6lu"]
-xfade_time = 0.2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8ru10"]
-xfade_time = 0.2
-advance_mode = 2
-advance_expression = "!get_meta('is_playing')"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bsae4"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yjplb"]
-advance_mode = 2
-advance_expression = "get_meta('is_playing')"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5hsgs"]
-xfade_time = 0.2
-advance_mode = 2
-advance_expression = "get_meta('variation') > 0"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_np67j"]
-xfade_time = 0.2
-advance_mode = 2
-advance_expression = "get_meta('variation') <= 0"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_72gad"]
-xfade_time = 0.2
-advance_mode = 2
-advance_expression = "!get_meta('is_playing')"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sd8fv"]
-xfade_time = 0.2
-advance_mode = 2
-advance_expression = "get_meta('variation') > 1"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6my8b"]
 xfade_time = 0.2
 advance_mode = 2
-advance_expression = "get_meta('variation') <= 1"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uqcvj"]
 xfade_time = 0.2
@@ -1499,71 +1518,109 @@ advance_mode = 2
 advance_expression = "!get_meta('is_playing')"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u0nrs"]
-xfade_time = 0.2
+switch_mode = 2
 advance_mode = 2
-advance_expression = "get_meta('variation') > 2"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o0y0x"]
-xfade_time = 0.2
 advance_mode = 2
-advance_expression = "get_meta('variation') <= 2"
+advance_expression = "get_meta('is_playing')"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w6k2n"]
 xfade_time = 0.2
 advance_mode = 2
-advance_expression = "!get_meta('is_playing')"
+advance_expression = "get_meta('variation') > 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wrbi8"]
 xfade_time = 0.2
 advance_mode = 2
-advance_expression = "get_meta('variation') > 3"
+advance_expression = "get_meta('variation') <= 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ayewu"]
 xfade_time = 0.2
 advance_mode = 2
-advance_expression = "get_meta('variation') <= 3"
+advance_expression = "!get_meta('is_playing')"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b6fwa"]
 xfade_time = 0.2
 advance_mode = 2
-advance_expression = "!get_meta('is_playing')"
+advance_expression = "get_meta('variation') > 1"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b7p0r"]
 xfade_time = 0.2
 advance_mode = 2
-advance_expression = "get_meta('variation') > 4"
+advance_expression = "get_meta('variation') <= 1"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2crnn"]
 xfade_time = 0.2
 advance_mode = 2
-advance_expression = "get_meta('variation') <= 4"
+advance_expression = "!get_meta('is_playing')"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ab26b"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') > 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y36u5"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') <= 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o7yfo"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "!get_meta('is_playing')"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ynrhn"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') > 3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x7vlt"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') <= 3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pamrf"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "!get_meta('is_playing')"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5unyt"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') > 4"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7i23d"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "get_meta('variation') <= 4"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rwgvr"]
 xfade_time = 0.2
 advance_mode = 2
 advance_expression = "!get_meta('is_playing')"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4u7ox"]
 resource_local_to_scene = true
-states/ENTRY/node = SubResource("AnimationNodeAnimation_8qkx7")
+states/ENTRY/node = SubResource("AnimationNodeAnimation_amdmt")
 states/ENTRY/position = Vector2(0, 100)
-states/EXIT/node = SubResource("AnimationNodeAnimation_yw7xx")
+states/EXIT/node = SubResource("AnimationNodeAnimation_4u7ox")
 states/EXIT/position = Vector2(200, 100)
 states/End/position = Vector2(660, 153)
-states/RESET/node = SubResource("AnimationNodeAnimation_l31vc")
+states/RESET/node = SubResource("AnimationNodeAnimation_6gtyf")
 states/RESET/position = Vector2(100, 0)
 states/Start/position = Vector2(-188, 100)
-states/VAR_1/node = SubResource("AnimationNodeAnimation_amdmt")
+states/VAR_1/node = SubResource("AnimationNodeAnimation_68myx")
 states/VAR_1/position = Vector2(100, 200)
-states/VAR_2/node = SubResource("AnimationNodeAnimation_4u7ox")
+states/VAR_2/node = SubResource("AnimationNodeAnimation_1e6lu")
 states/VAR_2/position = Vector2(100, 300)
-states/VAR_3/node = SubResource("AnimationNodeAnimation_6gtyf")
+states/VAR_3/node = SubResource("AnimationNodeAnimation_8ru10")
 states/VAR_3/position = Vector2(100, 400)
-states/VAR_4/node = SubResource("AnimationNodeAnimation_68myx")
+states/VAR_4/node = SubResource("AnimationNodeAnimation_bsae4")
 states/VAR_4/position = Vector2(100, 500)
-states/VAR_5/node = SubResource("AnimationNodeAnimation_1e6lu")
+states/VAR_5/node = SubResource("AnimationNodeAnimation_sd8fv")
 states/VAR_5/position = Vector2(100, 600)
-transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_1e6lu"), "ENTRY", "EXIT", SubResource("AnimationNodeStateMachineTransition_8ru10"), "EXIT", "RESET", SubResource("AnimationNodeStateMachineTransition_bsae4"), "RESET", "ENTRY", SubResource("AnimationNodeStateMachineTransition_yjplb"), "ENTRY", "VAR_1", SubResource("AnimationNodeStateMachineTransition_5hsgs"), "VAR_1", "ENTRY", SubResource("AnimationNodeStateMachineTransition_np67j"), "VAR_1", "EXIT", SubResource("AnimationNodeStateMachineTransition_72gad"), "VAR_1", "VAR_2", SubResource("AnimationNodeStateMachineTransition_sd8fv"), "VAR_2", "VAR_1", SubResource("AnimationNodeStateMachineTransition_6my8b"), "VAR_2", "EXIT", SubResource("AnimationNodeStateMachineTransition_uqcvj"), "VAR_2", "VAR_3", SubResource("AnimationNodeStateMachineTransition_u0nrs"), "VAR_3", "VAR_2", SubResource("AnimationNodeStateMachineTransition_o0y0x"), "VAR_3", "EXIT", SubResource("AnimationNodeStateMachineTransition_w6k2n"), "VAR_3", "VAR_4", SubResource("AnimationNodeStateMachineTransition_wrbi8"), "VAR_4", "VAR_3", SubResource("AnimationNodeStateMachineTransition_ayewu"), "VAR_4", "EXIT", SubResource("AnimationNodeStateMachineTransition_b6fwa"), "VAR_4", "VAR_5", SubResource("AnimationNodeStateMachineTransition_b7p0r"), "VAR_5", "VAR_4", SubResource("AnimationNodeStateMachineTransition_2crnn"), "VAR_5", "EXIT", SubResource("AnimationNodeStateMachineTransition_ab26b")]
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_6my8b"), "ENTRY", "EXIT", SubResource("AnimationNodeStateMachineTransition_uqcvj"), "EXIT", "RESET", SubResource("AnimationNodeStateMachineTransition_u0nrs"), "RESET", "ENTRY", SubResource("AnimationNodeStateMachineTransition_o0y0x"), "ENTRY", "VAR_1", SubResource("AnimationNodeStateMachineTransition_w6k2n"), "VAR_1", "ENTRY", SubResource("AnimationNodeStateMachineTransition_wrbi8"), "VAR_1", "EXIT", SubResource("AnimationNodeStateMachineTransition_ayewu"), "VAR_1", "VAR_2", SubResource("AnimationNodeStateMachineTransition_b6fwa"), "VAR_2", "VAR_1", SubResource("AnimationNodeStateMachineTransition_b7p0r"), "VAR_2", "EXIT", SubResource("AnimationNodeStateMachineTransition_2crnn"), "VAR_2", "VAR_3", SubResource("AnimationNodeStateMachineTransition_ab26b"), "VAR_3", "VAR_2", SubResource("AnimationNodeStateMachineTransition_y36u5"), "VAR_3", "EXIT", SubResource("AnimationNodeStateMachineTransition_o7yfo"), "VAR_3", "VAR_4", SubResource("AnimationNodeStateMachineTransition_ynrhn"), "VAR_4", "VAR_3", SubResource("AnimationNodeStateMachineTransition_x7vlt"), "VAR_4", "EXIT", SubResource("AnimationNodeStateMachineTransition_pamrf"), "VAR_4", "VAR_5", SubResource("AnimationNodeStateMachineTransition_5unyt"), "VAR_5", "VAR_4", SubResource("AnimationNodeStateMachineTransition_7i23d"), "VAR_5", "EXIT", SubResource("AnimationNodeStateMachineTransition_rwgvr")]
 graph_offset = Vector2(-587, -21)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfg3e"]
@@ -1834,11 +1891,13 @@ _data = {
 albedo_color = Color(0.2784314, 0.54901963, 0.7529412, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_72gad"]
-text = "GODOT WORKSHOP"
+resource_local_to_scene = true
+text = "0 - Download//setup"
 horizontal_alignment = 0
 vertical_alignment = 2
 
 [sub_resource type="TextMesh" id="TextMesh_sd8fv"]
+resource_local_to_scene = true
 text = "0 - Dowload // setup"
 font_size = 8
 horizontal_alignment = 0
@@ -2528,6 +2587,104 @@ states/RESET/position = Vector2(406, 22)
 transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_lde1t"), "RESET", "0", SubResource("AnimationNodeStateMachineTransition_yqf13"), "0", "1", SubResource("AnimationNodeStateMachineTransition_dc5g7"), "1", "2", SubResource("AnimationNodeStateMachineTransition_dmdc0"), "2", "3", SubResource("AnimationNodeStateMachineTransition_onbio"), "3", "4", SubResource("AnimationNodeStateMachineTransition_052qw"), "4", "5", SubResource("AnimationNodeStateMachineTransition_trmqt"), "5", "4", SubResource("AnimationNodeStateMachineTransition_dp4yo"), "4", "3", SubResource("AnimationNodeStateMachineTransition_hgnsq"), "3", "2", SubResource("AnimationNodeStateMachineTransition_ymcys"), "2", "1", SubResource("AnimationNodeStateMachineTransition_a83ly"), "1", "0", SubResource("AnimationNodeStateMachineTransition_8m620"), "0", "RESET", SubResource("AnimationNodeStateMachineTransition_bgdkf")]
 graph_offset = Vector2(-167, -48)
 
+[sub_resource type="QuadMesh" id="QuadMesh_4u7ox"]
+resource_local_to_scene = true
+size = Vector2(1.777, 1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8qkx7"]
+animation = &"ENTRY"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yw7xx"]
+animation = &"EXIT"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l31vc"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1e6lu"]
+xfade_time = 0.2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8ru10"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "!get_meta('is_playing')"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bsae4"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yjplb"]
+advance_mode = 2
+advance_expression = "get_meta('is_playing')"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6gtyf"]
+resource_local_to_scene = true
+states/ENTRY/node = SubResource("AnimationNodeAnimation_8qkx7")
+states/ENTRY/position = Vector2(0, 100)
+states/EXIT/node = SubResource("AnimationNodeAnimation_yw7xx")
+states/EXIT/position = Vector2(200, 100)
+states/End/position = Vector2(660, 153)
+states/RESET/node = SubResource("AnimationNodeAnimation_l31vc")
+states/RESET/position = Vector2(100, 0)
+states/Start/position = Vector2(-188, 100)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_1e6lu"), "ENTRY", "EXIT", SubResource("AnimationNodeStateMachineTransition_8ru10"), "EXIT", "RESET", SubResource("AnimationNodeStateMachineTransition_bsae4"), "RESET", "ENTRY", SubResource("AnimationNodeStateMachineTransition_yjplb")]
+graph_offset = Vector2(-587, -21)
+
+[sub_resource type="TextMesh" id="TextMesh_68myx"]
+text = "0 - Download//setup"
+horizontal_alignment = 0
+vertical_alignment = 2
+
+[sub_resource type="TextMesh" id="TextMesh_8qkx7"]
+text = "godot - https://godotengine.org/"
+font_size = 8
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[sub_resource type="TextMesh" id="TextMesh_yw7xx"]
+text = "steam"
+font_size = 8
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l31vc"]
+albedo_texture = ExtResource("5_uyttj")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ofllb"]
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1e6lu"]
+albedo_texture = ExtResource("6_amdmt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8ru10"]
+size = Vector2(1, 0.325)
+
+[sub_resource type="QuadMesh" id="QuadMesh_uyttj"]
+resource_local_to_scene = true
+size = Vector2(1.777, 1)
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_amdmt"]
+resource_local_to_scene = true
+states/ENTRY/node = SubResource("AnimationNodeAnimation_8qkx7")
+states/ENTRY/position = Vector2(0, 100)
+states/EXIT/node = SubResource("AnimationNodeAnimation_yw7xx")
+states/EXIT/position = Vector2(200, 100)
+states/End/position = Vector2(660, 153)
+states/RESET/node = SubResource("AnimationNodeAnimation_l31vc")
+states/RESET/position = Vector2(100, 0)
+states/Start/position = Vector2(-188, 100)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_1e6lu"), "ENTRY", "EXIT", SubResource("AnimationNodeStateMachineTransition_8ru10"), "EXIT", "RESET", SubResource("AnimationNodeStateMachineTransition_bsae4"), "RESET", "ENTRY", SubResource("AnimationNodeStateMachineTransition_yjplb")]
+graph_offset = Vector2(-587, -21)
+
+[sub_resource type="TextMesh" id="TextMesh_l31vc"]
+resource_local_to_scene = true
+text = "0 - Download//setup"
+horizontal_alignment = 0
+vertical_alignment = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4u7ox"]
+albedo_texture = ExtResource("7_amdmt")
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hlteb"]
 sky_top_color = Color(0.56078434, 0.8, 1, 1)
 sky_horizon_color = Color(0.859, 1.303, 1.753, 1)
@@ -2560,7 +2717,7 @@ adjustment_enabled = true
 [node name="Main_scene" type="Node3D" parent="." unique_id=1282011518 node_paths=PackedStringArray("slides")]
 script = ExtResource("1_aef1x")
 slide_preset = ExtResource("2_hlteb")
-slides = [NodePath("nb_slides/Wait"), NodePath("nb_slides/Start_slide"), NodePath("nb_slides/Start_options")]
+slides = [NodePath("nb_slides/Wait"), NodePath("nb_slides/Start_slide"), NodePath("nb_slides/Start_options"), NodePath("nb_slides/0 - 0"), NodePath("nb_slides/0 - 1")]
 
 [node name="nb_trash" type="Node3D" parent="Main_scene" unique_id=583480922]
 visible = false
@@ -2571,6 +2728,7 @@ visible = false
 script = ExtResource("4_hlteb")
 camera = NodePath("Camera3D")
 animation_tree = NodePath("AnimationTree")
+animation_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="Main_scene/nb_slides/Wait" unique_id=724262419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
@@ -2585,7 +2743,6 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_bsae4")
 
 [node name="AnimationTree" type="AnimationTree" parent="Main_scene/nb_slides/Wait" unique_id=1900974208]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_81q1i")
 anim_player = NodePath("../AnimationPlayer")
 metadata/is_playing = false
@@ -2619,46 +2776,70 @@ shadow_enabled = true
 shadow_blur = 2.0
 omni_range = 10.0
 
-[node name="Start_slide" parent="Main_scene/nb_slides" unique_id=1106477507 instance=ExtResource("2_hlteb")]
+[node name="Start_slide" type="Node3D" parent="Main_scene/nb_slides" unique_id=1106477507 node_paths=PackedStringArray("camera", "animation_tree")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.777, 0, 0)
+script = ExtResource("4_hlteb")
+camera = NodePath("Camera3D")
+animation_tree = NodePath("AnimationTree")
+animation_enabled = true
 animation_variation = 2
 branching = Array[int]([-1, -1])
 
-[node name="MeshInstance3D" parent="Main_scene/nb_slides/Start_slide" index="1" unique_id=517713459]
+[node name="Camera3D" type="Camera3D" parent="Main_scene/nb_slides/Start_slide" unique_id=2078091201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_slide" unique_id=1633635830]
 material_override = SubResource("StandardMaterial3D_amdmt")
 mesh = SubResource("QuadMesh_81q1i")
 
-[node name="AnimationPlayer" parent="Main_scene/nb_slides/Start_slide" index="2" unique_id=1686066139]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_scene/nb_slides/Start_slide" unique_id=1384399090]
+deterministic = true
 libraries/ = SubResource("AnimationLibrary_6my8b")
 
-[node name="AnimationTree" parent="Main_scene/nb_slides/Start_slide" index="3" unique_id=1900974208]
+[node name="AnimationTree" type="AnimationTree" parent="Main_scene/nb_slides/Start_slide" unique_id=2105313170]
 tree_root = SubResource("AnimationNodeStateMachine_uyttj")
+anim_player = NodePath("../AnimationPlayer")
+metadata/is_playing = false
+metadata/variation = 0
 
-[node name="Godot ball" parent="Main_scene/nb_slides/Start_slide" index="4" unique_id=1070132721]
+[node name="Godot ball" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_slide" unique_id=1070132721]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.7, -0.3, 0.2)
 material_override = SubResource("StandardMaterial3D_b7p0r")
 mesh = SubResource("BoxMesh_y36u5")
 
-[node name="Godot ball3" parent="Main_scene/nb_slides/Start_slide" index="5" unique_id=1509651319]
+[node name="Godot ball3" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_slide" unique_id=1509651319]
 transform = Transform3D(-0.23259081, -0.76979256, -0.59440804, 0.39753073, 0.48253694, -0.78046614, 0.8876208, -0.4178247, 0.19378255, 0.72202724, -0.1716792, 0.1)
 material_override = SubResource("StandardMaterial3D_b7p0r")
 mesh = SubResource("BoxMesh_o7yfo")
 
-[node name="Godot ball2" parent="Main_scene/nb_slides/Start_slide" index="6" unique_id=1341962709]
+[node name="Godot ball2" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_slide" unique_id=1341962709]
+transform = Transform3D(0.35003078, 0.07882111, 0.9334162, 0.024232106, -0.9968821, 0.075093366, 0.9364248, -0.0036663525, -0.3508494, 0.5640494, -0.26404944, 0.4)
 material_override = SubResource("StandardMaterial3D_b7p0r")
 mesh = SubResource("BoxMesh_hlteb")
 
-[node name="Godot ball spin" parent="Main_scene/nb_slides/Start_slide" index="7" unique_id=557223100]
+[node name="Godot ball spin" type="AnimationPlayer" parent="Main_scene/nb_slides/Start_slide" unique_id=557223100]
+root_node = NodePath("../Godot ball")
 libraries/ = SubResource("AnimationLibrary_5unyt")
+autoplay = &"spinn"
+speed_scale = 0.1
 
-[node name="H1" parent="Main_scene/nb_slides/Start_slide" index="8" unique_id=1639244705]
+[node name="H1" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_slide" unique_id=193987142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.20000002, 1)
 material_override = SubResource("StandardMaterial3D_hlteb")
 mesh = SubResource("TextMesh_7i23d")
 
-[node name="h2" parent="Main_scene/nb_slides/Start_slide" index="9" unique_id=1261551803]
+[node name="h2" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_slide" unique_id=735990499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.20000002, 1)
 mesh = SubResource("TextMesh_rwgvr")
 
-[node name="OmniLight3D" parent="Main_scene/nb_slides/Start_slide" index="10" unique_id=1137087864]
+[node name="OmniLight3D" type="OmniLight3D" parent="Main_scene/nb_slides/Start_slide" unique_id=223554077]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+light_energy = 2.0
+light_size = 0.25
+shadow_enabled = true
+shadow_blur = 2.0
+omni_range = 10.0
 
 [node name="h3" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_slide" unique_id=917023319]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.10000002, 1)
@@ -2669,6 +2850,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.554, 0, 0)
 script = ExtResource("4_hlteb")
 camera = NodePath("Camera3D")
 animation_tree = NodePath("AnimationTree")
+animation_enabled = true
 animation_variation = 5
 branching = Array[int]([-1, -1, -1, -1, -1])
 
@@ -2685,7 +2867,6 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_68myx")
 
 [node name="AnimationTree" type="AnimationTree" parent="Main_scene/nb_slides/Start_options" unique_id=1151944654]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_4u7ox")
 anim_player = NodePath("../AnimationPlayer")
 metadata/is_playing = true
@@ -2697,7 +2878,7 @@ material_override = SubResource("StandardMaterial3D_ayewu")
 mesh = SubResource("BoxMesh_b6fwa")
 
 [node name="Godot ball3" type="MeshInstance3D" parent="Main_scene/nb_slides/Start_options" unique_id=1826267655]
-transform = Transform3D(-0.23259069, -0.7697924, -0.59440804, 0.39753053, 0.48253682, -0.78046614, 0.88762033, -0.4178246, 0.19378255, 0.72202724, -0.1716792, 0.1)
+transform = Transform3D(-0.23259068, -0.7697924, -0.59440804, 0.3975305, 0.48253682, -0.78046614, 0.8876203, -0.4178246, 0.19378255, 0.72202724, -0.1716792, 0.1)
 material_override = SubResource("StandardMaterial3D_ayewu")
 mesh = SubResource("BoxMesh_b7p0r")
 
@@ -2759,6 +2940,106 @@ shadow_enabled = true
 shadow_blur = 2.0
 omni_range = 10.0
 
+[node name="0 - 0" type="Node3D" parent="Main_scene/nb_slides" unique_id=2070274014 node_paths=PackedStringArray("camera", "animation_tree")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.108, 0, 0)
+script = ExtResource("4_hlteb")
+camera = NodePath("Camera3D")
+slide_aligner_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.554, 0, 0)
+animation_tree = NodePath("AnimationTree")
+animation_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="Main_scene/nb_slides/0 - 0" unique_id=327317824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Main_scene/nb_slides/0 - 0" unique_id=1474134848]
+material_override = SubResource("StandardMaterial3D_81q1i")
+mesh = SubResource("QuadMesh_4u7ox")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_scene/nb_slides/0 - 0" unique_id=1402474792]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_68myx")
+
+[node name="AnimationTree" type="AnimationTree" parent="Main_scene/nb_slides/0 - 0" unique_id=818187556]
+tree_root = SubResource("AnimationNodeStateMachine_6gtyf")
+anim_player = NodePath("../AnimationPlayer")
+metadata/is_playing = false
+metadata/variation = 0
+
+[node name="H1" type="MeshInstance3D" parent="Main_scene/nb_slides/0 - 0" unique_id=1558952873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.20000002, 1)
+material_override = SubResource("StandardMaterial3D_np67j")
+mesh = SubResource("TextMesh_68myx")
+
+[node name="h2" type="MeshInstance3D" parent="Main_scene/nb_slides/0 - 0" unique_id=1909369320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.20000002, 1)
+mesh = SubResource("TextMesh_8qkx7")
+
+[node name="h3" type="MeshInstance3D" parent="Main_scene/nb_slides/0 - 0" unique_id=229977466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 1.4901161e-08, 1)
+mesh = SubResource("TextMesh_yw7xx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Main_scene/nb_slides/0 - 0" unique_id=210085805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 5)
+light_energy = 2.0
+light_size = 0.25
+shadow_enabled = true
+shadow_blur = 2.0
+omni_range = 10.0
+
+[node name="qr-godot" type="MeshInstance3D" parent="Main_scene/nb_slides/0 - 0" unique_id=908159625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5999999, -0.20000002, 0.2)
+material_override = SubResource("StandardMaterial3D_l31vc")
+mesh = SubResource("QuadMesh_ofllb")
+
+[node name="qr-godot2" type="MeshInstance3D" parent="Main_scene/nb_slides/0 - 0" unique_id=872651934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26401043, -0.29424477, 0.2)
+material_override = SubResource("StandardMaterial3D_1e6lu")
+mesh = SubResource("QuadMesh_8ru10")
+
+[node name="0 - 1" type="Node3D" parent="Main_scene/nb_slides" unique_id=296881951 node_paths=PackedStringArray("camera", "animation_tree")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.885, 0, 0)
+script = ExtResource("4_hlteb")
+camera = NodePath("Camera3D")
+animation_tree = NodePath("AnimationTree")
+animation_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="Main_scene/nb_slides/0 - 1" unique_id=8172227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Main_scene/nb_slides/0 - 1" unique_id=1599848530]
+material_override = SubResource("StandardMaterial3D_81q1i")
+mesh = SubResource("QuadMesh_uyttj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_scene/nb_slides/0 - 1" unique_id=1921688798]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_68myx")
+
+[node name="AnimationTree" type="AnimationTree" parent="Main_scene/nb_slides/0 - 1" unique_id=1127207905]
+tree_root = SubResource("AnimationNodeStateMachine_amdmt")
+anim_player = NodePath("../AnimationPlayer")
+metadata/is_playing = false
+metadata/variation = 0
+
+[node name="H1" type="MeshInstance3D" parent="Main_scene/nb_slides/0 - 1" unique_id=1000227742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.20000002, 1)
+material_override = SubResource("StandardMaterial3D_np67j")
+mesh = SubResource("TextMesh_l31vc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Main_scene/nb_slides/0 - 1" unique_id=233743131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 5)
+light_energy = 2.0
+light_size = 0.25
+shadow_enabled = true
+shadow_blur = 2.0
+omni_range = 10.0
+
+[node name="screenshot" type="MeshInstance3D" parent="Main_scene/nb_slides/0 - 1" unique_id=1212841903]
+transform = Transform3D(2.1521435, 0, 0, 0, 1.2604911, 0, 0, 0, 1, -0.23711872, -0.1203669, 0.2)
+material_override = SubResource("StandardMaterial3D_4u7ox")
+mesh = SubResource("QuadMesh_ofllb")
+
 [node name="nb_aligner" type="Node3D" parent="Main_scene" unique_id=202618719]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036516159]
@@ -2768,5 +3049,3 @@ environment = SubResource("Environment_uyttj")
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -2, 0, 0)
 light_color = Color(1, 1, 0.84313726, 1)
 light_specular = 0.0
-
-[editable path="Main_scene/nb_slides/Start_slide"]

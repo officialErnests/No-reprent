@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ctyf0kwljgo31"]
 
 [ext_resource type="Script" uid="uid://dq4xbtusd7orp" path="res://no_reprent/Script/slide.gd" id="1_dnqbk"]
-[ext_resource type="Texture2D" uid="uid://blkb8tsjk2uh" path="res://Presets/Godot/Assets/godoticon.svg" id="2_r1pyw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81q1i"]
 albedo_color = Color(0.21568628, 0.23921569, 0.32156864, 1)
@@ -16,7 +15,6 @@ length = 0.2
 
 [sub_resource type="Animation" id="Animation_4u7ox"]
 resource_name = "EXIT"
-length = 0.2
 
 [sub_resource type="Animation" id="Animation_6gtyf"]
 length = 0.001
@@ -41,13 +39,29 @@ length = 0.2
 resource_name = "VAR_2"
 length = 0.2
 
+[sub_resource type="Animation" id="Animation_6my8b"]
+resource_name = "VAR_3"
+
+[sub_resource type="Animation" id="Animation_uqcvj"]
+resource_name = "VAR_4"
+
+[sub_resource type="Animation" id="Animation_u0nrs"]
+resource_name = "VAR_5"
+
+[sub_resource type="Animation" id="Animation_o0y0x"]
+resource_name = "VAR_6"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_68myx"]
 _data = {
 &"ENTRY": SubResource("Animation_amdmt"),
 &"EXIT": SubResource("Animation_4u7ox"),
 &"RESET": SubResource("Animation_6gtyf"),
 &"VAR_1": SubResource("Animation_1e6lu"),
-&"VAR_2": SubResource("Animation_8ru10")
+&"VAR_2": SubResource("Animation_8ru10"),
+&"VAR_3": SubResource("Animation_6my8b"),
+&"VAR_4": SubResource("Animation_uqcvj"),
+&"VAR_5": SubResource("Animation_u0nrs"),
+&"VAR_6": SubResource("Animation_o0y0x")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8qkx7"]
@@ -89,288 +103,28 @@ states/Start/position = Vector2(-188, 100)
 transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_1e6lu"), "ENTRY", "EXIT", SubResource("AnimationNodeStateMachineTransition_8ru10"), "EXIT", "RESET", SubResource("AnimationNodeStateMachineTransition_bsae4"), "RESET", "ENTRY", SubResource("AnimationNodeStateMachineTransition_yjplb")]
 graph_offset = Vector2(-587, -21)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfg3e"]
-cull_mode = 1
-shading_mode = 0
-albedo_color = Color(0.21568628, 0.23921569, 0.32156864, 1)
-heightmap_scale = 16.0
-grow = true
-grow_amount = 0.01
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayewu"]
-next_pass = SubResource("StandardMaterial3D_bfg3e")
-shading_mode = 0
-albedo_texture = ExtResource("2_r1pyw")
-heightmap_scale = 16.0
-uv1_scale = Vector3(2, 2, 2)
-grow_amount = -0.02
-
-[sub_resource type="BoxMesh" id="BoxMesh_b6fwa"]
-uv2_padding = 0.0
-size = Vector3(0.1, 0.1, 0.1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_b7p0r"]
-uv2_padding = 0.0
-size = Vector3(0.05, 0.05, 0.05)
-
-[sub_resource type="BoxMesh" id="BoxMesh_2crnn"]
-uv2_padding = 0.0
-size = Vector3(0.2, 0.2, 0.2)
-
-[sub_resource type="Animation" id="Animation_ab26b"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-3.1415925, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:rotation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:material_override:uv1_offset")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Godot ball2:rotation:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.075164124, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Godot ball2:rotation:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1.9303354, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Godot ball2:rotation:z")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(3.1172895, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Godot ball3:rotation:x")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.8954111, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Godot ball3:rotation:y")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1.2556518, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Godot ball3:rotation:z")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.68910635, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_y36u5"]
-resource_name = "spinn"
-length = 10.0
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2, 2),
-"points": PackedFloat32Array(0, 0, 0, 1.1666666, 28, 0, -1.1, -10, 0.9925736, 9.023396, 10.506882, -1.7233329, 19.493118, 1.2267764, -13.876423, -15.446164, -1.833333, 38.446163, 0, 0),
-"times": PackedFloat32Array(0, 3, 5.99, 10)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2, 2),
-"points": PackedFloat32Array(-3.1415925, 0, 0, 1.1666666, -23.858408, 6.7456975, -1.2333333, 30.254303, 0.96796834, -23.744762, -4.2586036, -0.92341477, 3.0911853, 2.9099998, -9.741396, 6.2831855, -1.4666662, 7.7168145, 0, 0),
-"times": PackedFloat32Array(0, 3, 5.99, 10)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:rotation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2, 2),
-"points": PackedFloat32Array(0, 0, 0, 1.8, -13, 13.308136, -0.998576, 5.3347645, 0.9000001, -4.808136, 4.1800637, -1.1899996, -7.1800637, 1.2735327, 7.684075, 4.1800637, -1.333333, 18.819937, 0, 0),
-"times": PackedFloat32Array(0, 3, 5.99, 10)
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:material_override:uv1_offset")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(100, 50, 75)]
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Godot ball2:rotation:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.83333325, -64.5, 0.96666664, 30, -15.446164, -1.2666669, 34.446163, 0, 0, 10.506882, -1.1999998, 4.4931183, 1.1333337, -32.50688, 0, 0, 0, 0, 22),
-"times": PackedFloat32Array(0, 3.666667, 7.6, 10)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Godot ball2:rotation:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(6.7456975, -0.5999999, 67.7543, 0.8, -21.745697, 6.2831855, -1.0333335, 20.716814, 0, 0, -4.2586036, -0.833333, 11.258604, 2.1666665, -13.741396, -3.1415925, 0, 0, 0, 30.141592),
-"times": PackedFloat32Array(0, 3.666667, 7.6, 10)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Godot ball2:rotation:z")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(13.308136, -0.998576, 5.3347645, 0.9000001, -4.808136, 4.1800637, -1.2666664, 54.319935, 0, 0, 4.1800637, -1.0566664, -49.680065, 1.154603, 54.284637, 0, 0, 0, 1.7666667, -48.5),
-"times": PackedFloat32Array(0, 3.666667, 7.6, 10)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Godot ball3:rotation:x")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(-15.446164, -1.2666669, 34.446163, 0, 0, 10.506882, -1.1999998, 4.4931183, 1.1333337, -32.50688, 0, -0.83333325, -64.5, 0.96666664, 30, 0, 0, 0, 1.1666666, 28),
-"times": PackedFloat32Array(0, 3.05, 6.62, 10)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Godot ball3:rotation:y")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(6.2831855, -1.0333335, 20.716814, 0, 0, -4.2586036, -0.833333, 11.258604, 2.1666665, -13.741396, 6.7456975, -0.5999999, 67.7543, 0.8, -21.745697, -3.1415925, 0, 0, 1.1666666, -23.858408),
-"times": PackedFloat32Array(0, 3.05, 6.62, 10)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Godot ball3:rotation:z")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(4.1800637, -1.2666664, 54.319935, 0, 0, 4.1800637, -1.0566664, -49.680065, 1.154603, 54.284637, 13.308136, -0.998576, 5.3347645, 0.9000001, -4.808136, 0, 0, 0, 1.8, -13),
-"times": PackedFloat32Array(0, 3.05, 6.62, 10)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7yfo"]
-_data = {
-&"RESET": SubResource("Animation_ab26b"),
-&"spinn": SubResource("Animation_y36u5")
-}
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_np67j"]
 albedo_color = Color(0.2784314, 0.54901963, 0.7529412, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_72gad"]
-text = "GODOT WORKSHOP"
+resource_local_to_scene = true
+text = "0 - Download//setup"
 horizontal_alignment = 0
 vertical_alignment = 2
 
 [sub_resource type="TextMesh" id="TextMesh_sd8fv"]
+resource_local_to_scene = true
 text = "0 - Dowload // setup"
 font_size = 8
 horizontal_alignment = 0
 vertical_alignment = 0
 
 [node name="preset_slide" type="Node3D" unique_id=1142204227 node_paths=PackedStringArray("camera", "animation_tree")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
 script = ExtResource("1_dnqbk")
 camera = NodePath("Camera3D")
 animation_tree = NodePath("AnimationTree")
+animation_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=724262419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
@@ -385,35 +139,13 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_68myx")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1900974208]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_ofllb")
 anim_player = NodePath("../AnimationPlayer")
 metadata/is_playing = false
 metadata/variation = 0
 
-[node name="Godot ball" type="MeshInstance3D" parent="." unique_id=1070132721]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.7, -0.3, 0.2)
-material_override = SubResource("StandardMaterial3D_ayewu")
-mesh = SubResource("BoxMesh_b6fwa")
-
-[node name="Godot ball3" type="MeshInstance3D" parent="." unique_id=1509651319]
-transform = Transform3D(-0.2325907, -0.7697924, -0.59440804, 0.39753056, 0.48253682, -0.78046614, 0.8876204, -0.4178246, 0.19378255, 0.72202724, -0.1716792, 0.1)
-material_override = SubResource("StandardMaterial3D_ayewu")
-mesh = SubResource("BoxMesh_b7p0r")
-
-[node name="Godot ball2" type="MeshInstance3D" parent="." unique_id=1341962709]
-transform = Transform3D(0.35003078, 0.07882111, 0.9334162, 0.024232106, -0.9968821, 0.075093366, 0.9364248, -0.0036663525, -0.3508494, 0.5640494, -0.26404944, 0.4)
-material_override = SubResource("StandardMaterial3D_ayewu")
-mesh = SubResource("BoxMesh_2crnn")
-
-[node name="Godot ball spin" type="AnimationPlayer" parent="." unique_id=557223100]
-root_node = NodePath("../Godot ball")
-libraries/ = SubResource("AnimationLibrary_o7yfo")
-autoplay = &"spinn"
-speed_scale = 0.1
-
 [node name="H1" type="MeshInstance3D" parent="." unique_id=1639244705]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.20000002, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.19999999, 1)
 material_override = SubResource("StandardMaterial3D_np67j")
 mesh = SubResource("TextMesh_72gad")
 
