@@ -55,6 +55,7 @@ func update():
 
 func vailidateChildren():
 	var new_slide_amount = new_array.size() - slides_node.get_child_count()
+	print(new_slide_amount, new_array.size(), slides_node.get_child_count())
 	if new_slide_amount > 0:
 		for i in range(new_slide_amount):
 			var temp_slide = slide_preset.instantiate()
@@ -67,7 +68,6 @@ func vailidateChildren():
 			temp_slide.slide_manager = self
 			temp_slide.owner = get_tree().edited_scene_root
 			get_tree().get_edited_scene_root().set_editable_instance(temp_slide, true)
-			slides.append(temp_slide)
 			# Adds slide to the last position, for comfy ;bb
 			var temp_list = slides_node.get_children()
 			if temp_list.size() == 0:
@@ -80,9 +80,10 @@ func vailidateChildren():
 						break
 
 	elif new_slide_amount == 0:
-		for i in range(slides.size()):
-			slides[i] = new_array[i]
-			slides_node.move_child(slides[i], i)
+		if slides.size() != 0:
+			for i in range(slides.size()):
+				slides[i] = new_array[i]
+				slides_node.move_child(slides[i], i)
 	else:
 		var offset:int = 0
 		for i in range(slides.size()):
@@ -165,21 +166,31 @@ func slide_restoreSlide(p_node):
 
 var curent_slide = 0
 var slide_amount = 0
+var next_slide = 0
+var slide_variation = 0
+var exit_animation = false
 func presentationStarted():
 	slides.clear()
 	for child in slides_node.get_children():
 		child.slide_manager = self
 		slides.append(child)
 	slide_amount = slides.size()
-	slides[0].camera.current = true
+	changeSlide(0)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Presentation_backwards"): changeSlide(curent_slide - 1)
-	if event.is_action_pressed("Presentation_fowards"): changeSlide(curent_slide + 1)
+	if event.is_action_pressed("Presentation_backwards") && !exit_animation: slides[curent_slide].exitAnimation(); next_slide -= 1; exit_animation = true
+	if event.is_action_pressed("Presentation_fowards")  && !exit_animation: slides[curent_slide].exitAnimation(); next_slide += 1; exit_animation = true
 	if event.is_action_pressed("Presentation_reset"): changeSlide(0)
-	if event.is_action_pressed("Presentation_variation_fowards"): pass
-	if event.is_action_pressed("Presentation_variation_backwards"): pass
+	if event.is_action_pressed("Presentation_variation_fowards"): slides[curent_slide].variation += 1
+	if event.is_action_pressed("Presentation_variation_backwards"): slides[curent_slide].variation -= 1
 
 func changeSlide(index:int):
 	curent_slide = clamp(index, 0, slide_amount - 1)
+	slides[curent_slide].introAnimation()
 	slides[curent_slide].camera.current = true
+
+func nextSlide():
+	exit_animation = false
+	await get_tree().create_timer(0.01).timeout
+	changeSlide(next_slide)
+	slide_variation = 0

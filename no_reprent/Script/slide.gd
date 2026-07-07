@@ -63,8 +63,17 @@ func disableAlign():
     notify_property_list_changed()
 
 func _ready() -> void:
+    state_machine = animation_tree.tree_root
     initalized = true
+    animation_enabled = true
+
+    var x = 1
+    while state_machine.has_node("VAR_" + str(x)): x+=1
+    animation_variation = x - 1
+
     checkManager()
+    if not Engine.is_editor_hint():
+        animation_tree.animation_finished.connect(animationFinished)
 
 func checkManager():
     if not slide_manager:
@@ -80,21 +89,25 @@ var state_machine: AnimationNodeStateMachine
 @export_tool_button("RESET ANIMATION TREE", "Reload") var reset_animation = animationTreeReset
 @export var animation_enabled: bool:
     set(new_animation_enabled):
+        if not initalized: return
         animation_enabled = new_animation_enabled
         animation_tree.active = animation_enabled
 @export var animation_variation: int:
     set(new_animation_variation):
+        if not initalized: return
         animation_variation = max(new_animation_variation, 0)
         animationUpdateVariation()
 @export_tool_button("Play intro", "PlayStart") var play_intro = introAnimation
 @export var variation: int:
     set(new_variation):
+        if not initalized: return
         variation = clamp(new_variation, 0, animation_variation)
         playAnimationVariation(variation)
 @export_tool_button("Play exit animation", "PlayStart") var play_exit = exitAnimation
 
 func animationTreeReset():
-    state_machine = animation_tree.tree_root
+    animation_tree.set_meta("variation", 0)
+    animation_tree.set_meta("is_playing", false)
     for i in state_machine.get_node_list():
         state_machine.remove_node(i)
 
@@ -107,7 +120,7 @@ func animationTreeReset():
     var t_init_transitions = [
         {
             "from": "Start",
-            "to": "ENTRY",
+            "to": "RESET",
             "x_fade": 0.2,
             "expression": "",
             "switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
@@ -194,8 +207,8 @@ func animationUpdateVariation():
     elif curent_size < 0:
         for i in range(abs(curent_size)):
             var t_spot = animation_variation - curent_size - i
+            print(t_spot, "VAR_"+str(t_spot))
             state_machine.remove_node("VAR_"+str(t_spot))
-            print(t_spot)
 func animationAddNodes(p_nodes):
     for i in p_nodes:
         var t_Animation_node := AnimationNodeAnimation.new()
@@ -211,10 +224,17 @@ func animationAddTransitions(p_transitions):
         state_machine.add_transition(i.from, i.to, t_transition)
 
 func introAnimation():
+    print("Intro anim")
     animation_tree.set_meta("variation", 0)
     animation_tree.set_meta("is_playing", true)
     variation = 0
 func playAnimationVariation(p_variation):
+    print("Variation anim: " + str(p_variation))
     animation_tree.set_meta("variation", p_variation)
 func exitAnimation():
+    print("Exit anim")
     animation_tree.set_meta("is_playing", false)
+
+func animationFinished(anim_name: StringName) -> void:
+    if anim_name == "EXIT" && slide_manager:
+        slide_manager.nextSlide()

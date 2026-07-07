@@ -3,21 +3,16 @@
 [ext_resource type="Script" uid="uid://bxf4w20ghprpf" path="res://no_reprent/Script/main_scene.gd" id="1_10agn"]
 [ext_resource type="PackedScene" uid="uid://dxe2856gbgt65" path="res://no_reprent/Scenes/preset_slide.tscn" id="2_m6xlq"]
 
-[node name="Main_scene" type="Node3D" unique_id=1282011518 node_paths=PackedStringArray("slides")]
+[node name="Main_scene" type="Node3D" unique_id=1282011518]
 script = ExtResource("1_10agn")
 slide_preset = ExtResource("2_m6xlq")
-slides = [NodePath("nb_slides/slide_1")]
 
 [node name="nb_trash" type="Node3D" parent="." unique_id=583480922]
 visible = false
 
 [node name="nb_slides" type="Node3D" parent="." unique_id=1335640339]
 
-[node name="slide_1" parent="nb_slides" unique_id=1142204227 instance=ExtResource("2_m6xlq")]
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=249831361]
 transform = Transform3D(-0.54010695, -0.48091757, -0.6906539, 0.22040373, -0.87283343, 0.43541253, -0.8122233, 0.08294654, 0.5774195, 0, 0, 2.5693433)
 
 [node name="nb_aligner" type="Node3D" parent="." unique_id=202618719]
-
-[editable path="nb_slides/slide_1"]
