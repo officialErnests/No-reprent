@@ -9,52 +9,52 @@ albedo_color = Color(0.21568628, 0.23921569, 0.32156864, 1)
 resource_local_to_scene = true
 size = Vector2(1.777, 1)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uqcvj"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j2ior"]
 animation = &"ENTRY"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u0nrs"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uelx2"]
 animation = &"ENTRY"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0y0x"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1e8ua"]
 animation = &"EXIT"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w6k2n"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3tx7p"]
 animation = &"RESET"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wrbi8"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gs83l"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xnu3o"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yxmd2"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4pddi"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ldepf"]
 xfade_time = 0.2
 advance_mode = 2
 advance_expression = "!get_meta('is_playing')"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n2fr1"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4077d"]
 switch_mode = 2
 advance_mode = 2
 advance_expression = "get_meta('is_playing')"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bfg3e"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bepyn"]
 switch_mode = 2
 advance_mode = 2
 advance_expression = "get_meta('is_playing')"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ofllb"]
 resource_local_to_scene = true
-states/ENTRY/node = SubResource("AnimationNodeAnimation_uqcvj")
+states/ENTRY/node = SubResource("AnimationNodeAnimation_j2ior")
 states/ENTRY/position = Vector2(0, 100)
-states/ENTRY1/node = SubResource("AnimationNodeAnimation_u0nrs")
+states/ENTRY1/node = SubResource("AnimationNodeAnimation_uelx2")
 states/ENTRY1/position = Vector2(-100, 0)
-states/EXIT/node = SubResource("AnimationNodeAnimation_o0y0x")
+states/EXIT/node = SubResource("AnimationNodeAnimation_1e8ua")
 states/EXIT/position = Vector2(200, 100)
 states/End/position = Vector2(660, 153)
-states/RESET/node = SubResource("AnimationNodeAnimation_w6k2n")
+states/RESET/node = SubResource("AnimationNodeAnimation_3tx7p")
 states/RESET/position = Vector2(100, 0)
 states/Start/position = Vector2(-188, 100)
-transitions = ["Start", "ENTRY1", SubResource("AnimationNodeStateMachineTransition_wrbi8"), "ENTRY1", "RESET", SubResource("AnimationNodeStateMachineTransition_xnu3o"), "ENTRY", "EXIT", SubResource("AnimationNodeStateMachineTransition_4pddi"), "EXIT", "RESET", SubResource("AnimationNodeStateMachineTransition_n2fr1"), "RESET", "ENTRY", SubResource("AnimationNodeStateMachineTransition_bfg3e")]
+transitions = ["Start", "ENTRY1", SubResource("AnimationNodeStateMachineTransition_gs83l"), "ENTRY1", "RESET", SubResource("AnimationNodeStateMachineTransition_yxmd2"), "ENTRY", "EXIT", SubResource("AnimationNodeStateMachineTransition_ldepf"), "EXIT", "RESET", SubResource("AnimationNodeStateMachineTransition_4077d"), "RESET", "ENTRY", SubResource("AnimationNodeStateMachineTransition_bepyn")]
 graph_offset = Vector2(-587, -21)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_piy1r"]
@@ -62,7 +62,7 @@ albedo_color = Color(0.2784314, 0.54901963, 0.7529412, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_72gad"]
 resource_local_to_scene = true
-text = "1 - EDITOR"
+text = "3 - gdscript"
 horizontal_alignment = 0
 vertical_alignment = 2
 
@@ -72,6 +72,28 @@ text = "0 - Dowload // setup"
 font_size = 8
 horizontal_alignment = 0
 vertical_alignment = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ui62a"]
+size = Vector2(0.385, 0.635)
+
+[sub_resource type="Animation" id="Animation_kd1bl"]
+resource_name = "ENTRY"
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_5vpsb"]
+resource_name = "EXIT"
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_cm33u"]
+resource_name = "RESET"
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ui62a"]
+_data = {
+&"ENTRY": SubResource("Animation_kd1bl"),
+&"EXIT": SubResource("Animation_5vpsb"),
+&"RESET": SubResource("Animation_cm33u")
+}
 
 [node name="preset_slide" type="Node3D" unique_id=1142204227 node_paths=PackedStringArray("camera", "animation_tree")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
@@ -91,6 +113,7 @@ mesh = SubResource("QuadMesh_dhklb")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1900974208]
 deterministic = false
 tree_root = SubResource("AnimationNodeStateMachine_ofllb")
+anim_player = NodePath("../AnimationPlayer")
 metadata/is_playing = false
 metadata/variation = 0
 
@@ -110,3 +133,10 @@ light_size = 0.25
 shadow_enabled = true
 shadow_blur = 2.0
 omni_range = 10.0
+
+[node name="screenshot" type="MeshInstance3D" parent="." unique_id=1715320447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29458213, -0.19710428, 0.20000005)
+mesh = SubResource("QuadMesh_ui62a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=612568007]
+libraries/ = SubResource("AnimationLibrary_ui62a")

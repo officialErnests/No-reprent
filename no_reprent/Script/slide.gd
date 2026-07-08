@@ -236,9 +236,11 @@ func animationAddTransitions(p_transitions):
 		t_transition.switch_mode = i.switch_mode
 		t_transition.advance_mode = AnimationNodeStateMachineTransition.ADVANCE_MODE_AUTO
 		state_machine.add_transition(i.from, i.to, t_transition)
+#TODO make so animations going backwards get played in reverese
 
 func introAnimation():
 	print("Intro anim")
+	animation_tree.get("parameters/playback").start("RESET")
 	animation_tree.set_meta("variation", 0)
 	animation_tree.set_meta("is_playing", true)
 	variation = 0
@@ -247,8 +249,10 @@ func playAnimationVariation(p_variation):
 	animation_tree.set_meta("variation", p_variation)
 func exitAnimation():
 	print("Exit anim")
-	if variation != 0 && get_meta("update_branch")[variation - 1] != -1:
-			slide_manager.next_slide = get_meta("update_branch")[variation - 1]
+	if has_meta("update_branch"):
+		
+		if variation != 0 && get_meta("update_branch").size() > (variation - 1) && get_meta("update_branch")[variation - 1] != -1:
+				slide_manager.next_slide = get_meta("update_branch")[variation - 1]
 	animation_tree.set_meta("is_playing", false)
 
 func animationFinished(anim_name: StringName) -> void:

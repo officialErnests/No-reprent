@@ -39,8 +39,8 @@ What are nodes -> objects
 How moving objects inside one other copies position
 ## Linking
 What is object linking
-# 3 GODOT script
-What is gdscript and how close it is to py
+# 3 GODOT scene
+Lets start talking how nodes mix with scene
 # 4 PRACTICAL WORKSHOP
 In here the fun begins
 ## 2D platformer
