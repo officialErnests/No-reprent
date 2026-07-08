@@ -139,6 +139,7 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_68myx")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1900974208]
+deterministic = false
 tree_root = SubResource("AnimationNodeStateMachine_ofllb")
 anim_player = NodePath("../AnimationPlayer")
 metadata/is_playing = false

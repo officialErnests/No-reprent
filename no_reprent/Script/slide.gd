@@ -137,7 +137,7 @@ func animationTreeReset():
 			"from": "EXIT",
 			"to": "RESET",
 			"x_fade": 0,
-			"expression": "",
+			"expression": "get_meta('is_playing')",
 			"switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_AT_END
 		},
 		{
@@ -145,7 +145,7 @@ func animationTreeReset():
 			"to": "ENTRY",
 			"x_fade": 0,
 			"expression": "get_meta('is_playing')",
-			"switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
+			"switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_AT_END
 		}
 	]
 	animationAddTransitions(t_init_transitions)
