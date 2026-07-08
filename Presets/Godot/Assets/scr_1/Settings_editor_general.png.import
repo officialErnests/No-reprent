@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7af314flcjhy"
-path="res://.godot/imported/Screenshot_20260707_223804.png-1e13228cadd3b911c0632adfe55b03c1.ctex"
+uid="uid://bre7uh4b7d46q"
+path.s3tc="res://.godot/imported/Settings_editor_general.png-8739d50877409f36739d1ba2f24585a8.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Presets/Godot/Assets/scr_1/Screenshot_20260707_223804.png"
-dest_files=["res://.godot/imported/Screenshot_20260707_223804.png-1e13228cadd3b911c0632adfe55b03c1.ctex"]
+source_file="res://Presets/Godot/Assets/scr_1/Settings_editor_general.png"
+dest_files=["res://.godot/imported/Settings_editor_general.png-8739d50877409f36739d1ba2f24585a8.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

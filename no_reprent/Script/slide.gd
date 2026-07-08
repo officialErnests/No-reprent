@@ -247,8 +247,8 @@ func playAnimationVariation(p_variation):
 	animation_tree.set_meta("variation", p_variation)
 func exitAnimation():
 	print("Exit anim")
-	if variation != 0 && branching[variation - 1] != -1:
-		slide_manager.next_slide = branching[variation - 1]
+	if variation != 0 && get_meta("update_branch")[variation - 1] != -1:
+			slide_manager.next_slide = get_meta("update_branch")[variation - 1]
 	animation_tree.set_meta("is_playing", false)
 
 func animationFinished(anim_name: StringName) -> void:
@@ -260,6 +260,7 @@ func animationFinished(anim_name: StringName) -> void:
 	set(new_branch):
 		if new_branch.size() == branching.size():
 			branching = new_branch
+			set_meta("update_branch", branching)
 
 func updateBranches():
 	var diffrance = animation_variation - branching.size()

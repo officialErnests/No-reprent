@@ -181,8 +181,8 @@ func presentationStarted():
 	changeSlide(0)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Presentation_backwards") && !exit_animation: slides[curent_slide].exitAnimation(); next_slide -= 1; exit_animation = true
-	if event.is_action_pressed("Presentation_fowards")  && !exit_animation: slides[curent_slide].exitAnimation(); next_slide += 1; exit_animation = true
+	if event.is_action_pressed("Presentation_backwards") && !exit_animation: next_slide -= 1; slides[curent_slide].exitAnimation();  exit_animation = true
+	if event.is_action_pressed("Presentation_fowards")  && !exit_animation: next_slide += 1; slides[curent_slide].exitAnimation();  exit_animation = true
 	if event.is_action_pressed("Presentation_reset"): changeSlide(0)
 	if event.is_action_pressed("Presentation_variation_fowards"): slides[curent_slide].variation += 1
 	if event.is_action_pressed("Presentation_variation_backwards"): slides[curent_slide].variation -= 1
