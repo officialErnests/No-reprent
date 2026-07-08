@@ -120,12 +120,13 @@ func refreshSlidePositions():
 	var is_first = true
 	var previous_transform = global_transform
 	for i in slides_node.get_children():
-		if is_first:
-			is_first = false
-			i.global_transform = previous_transform
-		else:
-			i.global_transform = previous_transform * i.slide_aligner_offset
-		previous_transform = i.global_transform
+		if i.slide_aligner_aligned:
+			if is_first:
+				is_first = false
+				i.global_transform = previous_transform
+			else:
+				i.global_transform = previous_transform * i.slide_aligner_offset
+		if i.slide_aligner_counted:previous_transform = i.global_transform
 
 func clearTrash():
 	validate()

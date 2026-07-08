@@ -113,6 +113,7 @@ func animationTreeReset():
 		state_machine.remove_node(i)
 
 	var t_init_nodes = {
+		"ENTRY1": Vector2(-100,0), 
 		"ENTRY": Vector2(0,100), 
 		"RESET": Vector2(100,0), 
 		"EXIT": Vector2(200,100)
@@ -121,8 +122,15 @@ func animationTreeReset():
 	var t_init_transitions = [
 		{
 			"from": "Start",
+			"to": "ENTRY1",
+			"x_fade": 0,
+			"expression": "",
+			"switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
+		},
+		{
+			"from": "ENTRY1",
 			"to": "RESET",
-			"x_fade": 0.2,
+			"x_fade": 0,
 			"expression": "",
 			"switch_mode": AnimationNodeStateMachineTransition.SWITCH_MODE_IMMEDIATE
 		},
@@ -151,7 +159,7 @@ func animationTreeReset():
 	animationAddTransitions(t_init_transitions)
 	animationUpdateVariation()
 func animationUpdateVariation():
-	var curent_size = animation_variation - (animation_tree.tree_root.get_node_list().size() - 5)
+	var curent_size = animation_variation - (animation_tree.tree_root.get_node_list().size() - 6)
 	if curent_size > 0:
 		var t_init_nodes = {}
 		var t_init_transitions = []
@@ -213,10 +221,15 @@ func animationUpdateVariation():
 func animationAddNodes(p_nodes):
 	for i in p_nodes:
 		var t_Animation_node := AnimationNodeAnimation.new()
-		t_Animation_node.animation = i
+		if i == "ENTRY1":
+			t_Animation_node.animation = "ENTRY"
+		else:
+			t_Animation_node.animation = i
+		if state_machine.has_node(i): continue
 		state_machine.add_node(i, t_Animation_node, p_nodes[i])
 func animationAddTransitions(p_transitions):
 	for i in p_transitions:
+		if state_machine.has_transition(i.from, i.to): continue
 		var t_transition := AnimationNodeStateMachineTransition.new()
 		t_transition.xfade_time = i.x_fade
 		t_transition.advance_expression = i.expression
